@@ -3,6 +3,13 @@
 - Code: <https://github.com/Rinorragi/ci-security>
 - Slides: <https://rinorragi.github.io/ci-security/>
 
+## Apps
+
+Apps are pretty boring.
+
+- [uptodate-app](https://github.com/Rinorragi/ci-security/tree/main/apps/uptodate-app) is just plain empty template done with `dotnet new mvc`
+- [vulnerable-app](https://github.com/Rinorragi/ci-security/tree/main/apps/vulnerable-app) is similarly done with `dotnet new mvc` but there are some vulns added for you to find with the labs
+
 ## Labs
 
 - [Lab01 - Hello GitHub Actions](/labs/lab01-hello-github-actions/README.md)
