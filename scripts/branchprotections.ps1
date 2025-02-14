@@ -7,14 +7,22 @@ branchProtectionRules(first:100){
     allowsDeletions,
     allowsForcePushes,
     blocksCreations,
+    dismissesStaleReviews,
     lockBranch,
-    pushAllowances,
+    requireLastPushApproval,
     requiredApprovingReviewCount,
+    requiredDeploymentEnvironments,
+    requiredStatusCheckContexts,
     requiresApprovingReviews,
+    requiresCodeOwnerReviews,
+    requiresCommitSignatures,
     requiresConversationResolution,
+    requiresDeployments,
+    requiresLinearHistory,
+    requiresStatusChecks,
+    requiresStrictStatusChecks,
     restrictsPushes,
-    databaseId,
-    creator}
+    databaseId}
 }}}
 "@
 
