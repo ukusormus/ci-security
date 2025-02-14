@@ -1,0 +1,40 @@
+# Name of the workflow
+name: Lab05 License check
+# How the workflow run is named in GitHub
+run-name: Lab05 - ${{ github.actor }} is inspecting used licenses 🔎
+# Set your preferences for the script
+defaults:
+  run:
+    shell: pwsh
+on:
+  # Make it possible to other workflows to call this
+  workflow_call:
+  # Make it possible to manually run this workflow
+  workflow_dispatch:
+jobs:
+  Check-licensed-with-delice:
+    name: "Check licenses with delice"
+    runs-on: ubuntu-latest
+    # Steps to actually build the application
+    steps:
+      # Check out the git repository
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Ensure proper version of .NET
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "8.0.x"
+      - name: Restore
+        run: dotnet restore
+      - name: Setup delice
+        run: dotnet tool install -g dotnet-delice
+      - name: Check licenses with Delice
+        run: |
+          $licenses = ./scripts/licenseaudit.ps1
+          $unwantedLicenses = $licenses | Where-Object { $_ -ne "MIT" }
+          if ($unwantedLicenses -gt 0) {
+            Write-Host "Licensed found $unwantedLicenses"
+            # Set proper error message
+            core.error('Unwanted licenses detected', {file: scripts/licenseaudit.ps1})
+          }
