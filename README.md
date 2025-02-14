@@ -1,5 +1,7 @@
 # ci-security
 
+Purpose of this repository is to teach you how to add basic security safetyguards into continuous integration.
+
 - Code: <https://github.com/Rinorragi/ci-security>
 - Slides: <https://rinorragi.github.io/ci-security/>
 
