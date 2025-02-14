@@ -1,4 +1,4 @@
-# Lab23 - Prevent email disclosure
+# Lab23 - Prevent email address disclosure
 
 | Title          | Description                                     |
 | -------------- | ----------------------------------------------- |
