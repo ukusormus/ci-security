@@ -28,7 +28,7 @@ Scan TLS versions of the dockerized application. Check the [vulnerable-pipeline]
 
 ## Example solution
 
-- Code: <https://github.com/Rinorragi/ci-security/blob/release/examples/.github/workflows/lab10-tls-scanning.yml>
-- Runs: <https://github.com/Rinorragi/ci-security/actions/workflows/lab10-tls-scanning.yml>
+- Code: <https://github.com/Rinorragi/ci-security/blob/release/examples/.github/workflows/lab41-tls-scanning.yml>
+- Runs: <https://github.com/Rinorragi/ci-security/actions/workflows/lab41-tls-scanning.yml>
 
 There are online options like Qualys API or offline options like openssl and nmap to fetch TLS ciphers from online target. Network devices and the client machine might could cause some variances on the results so plan carefully how you do this in real environment.

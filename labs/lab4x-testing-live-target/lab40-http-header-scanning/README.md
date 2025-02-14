@@ -26,7 +26,7 @@ Offline:
 
 ## Scan HTTP headers
 
-In this lab, you’ll set up a workflow to scan the HTTP headers of your web application using `MDN HTTP Observatory`. You can ask for a target if you don't have one. This is not something that would be very intrusive. You can also try `OSHP validator` and running the target in docker. Check the [vulnerable-pipeline](/.github/workflows/vulnerable-pipeline.yml) to see how to run the app in docker.
+In this lab, you’ll set up a workflow to scan the HTTP headers of your web application using `MDN HTTP Observatory`. You can ask for a target if you don't have one. This is not something that would be very intrusive. You can also try `OSHP validator` and running the target in docker. Check the [vulnerable-pipeline](/.github/workflows/vulnerable-pipeline.yml) to see how to run the app in docker. With `venom` you will need [this yml file](https://github.com/oshp/oshp-validator/blob/main/tests_suite.yml).
 
 ## Links
 
