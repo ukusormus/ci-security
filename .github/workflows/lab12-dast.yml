@@ -92,3 +92,43 @@ jobs:
         with:
           name: Nuclei report
           path: ${{github.workspace}}/nucleireports
+
+  ffuf-scanning:
+    runs-on: ubuntu-latest
+    # Steps to actually build the application
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install latest go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "stable" # Latest stable: https://github.com/actions/setup-go
+      - name: Install ffuf
+        run: go install github.com/ffuf/ffuf/v2@latest
+      - name: Build docker image
+        run: |
+          Write-Host "-- Build docker"
+          docker build -t vulnerable-app-image -f ./apps/vulnerable-app/Dockerfile .
+
+          Write-Host "-- Run docker"
+          $containerId = docker run --tty --detach vulnerable-app-image --publish 8080:8080
+
+          Write-Host "-- Fetch IP"
+          $targetIp = docker inspect --format '{{ .NetworkSettings.IPAddress }}' $containerId
+          Write-Host "TargetIP was $targetIp"
+          $target = "http://"+$targetIp+":8080"
+
+          Write-Host "-- Create results folder"
+          mkdir ${{github.workspace}}/ffufreports
+
+          Write-Host "-- Download fuzz wordlist"
+          Invoke-WebRequest https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Discovery/Web-Content/IIS.fuzz.txt -OutFile ./iisfuzz.txt
+          Write-Host "-- Fuzz with ffuf"
+          ffuf -w ./iisfuzz.txt -u $target -json | ${{github.workspace}}/ffufreports/fuzzoutput.json
+
+      - name: Upload Test results
+        uses: actions/upload-artifact@master
+        if: ${{ always() }}
+        with:
+          name: Nuclei report
+          path: ${{github.workspace}}/ffufreports
