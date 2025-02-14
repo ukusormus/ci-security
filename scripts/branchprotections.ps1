@@ -1,10 +1,6 @@
-#!/bin/bash
-owner=Rinorragi
-repo=ci-security
-
 # Check the fields you want from https://docs.github.com/en/graphql/reference/objects#branchprotectionrule
-gh api graphql -f query="{
-repository(owner:"$owner", name:"$repo") {
+$query = @"
+{repository(owner:"Rinorragi", name:"ci-security") {
 branchProtectionRules(first:100){
   nodes{
     pattern,
@@ -20,3 +16,6 @@ branchProtectionRules(first:100){
     databaseId,
     creator}
 }}}
+"@
+
+gh api graphql -f query="$query"

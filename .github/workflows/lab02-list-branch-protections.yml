@@ -2,6 +2,10 @@
 name: Lab02 List branch protections
 # How the workflow run is named in GitHub
 run-name: Lab02 - ${{ github.actor }} is listing branch protections with GraphQL 🚀
+# Set your preferences for the script
+defaults:
+  run:
+    shell: pwsh
 on:
   # Make it possible to other workflows to call this
   workflow_call:
@@ -10,9 +14,9 @@ on:
 # The actual jobs
 jobs:
   # Job named Hello-job that runs on ubuntu-latest virtual machine
-  Hello-Job:
+  Branch-Protections:
     runs-on: ubuntu-latest
     # Steps that are being run to complete the job
     steps:
-      - name: Run hello world
-        run: ./scripts/branchprotections.sh
+      - name: Check branch protections
+        run: ./scripts/branchprotections.ps1
