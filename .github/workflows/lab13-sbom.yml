@@ -32,7 +32,7 @@ jobs:
       - name: Generate sbom with CycloneDX
         run: dotnet CycloneDX ci-security.sln --json --exclude-dev -o ./reports
       - name: Upload sbom results
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@masterad
         if: ${{ always() }}
         with:
           name: CycloneDX SBOM
@@ -46,15 +46,14 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 8.0.x
+      - name: Install Microsoft SBOM tool
+        run: dotnet tool install --global Microsoft.Sbom.DotNetTool
       - name: Install .NET dependencies
         run: dotnet restore
       - name: Build application
         run: dotnet build ci-security.sln --output buildOutput
       - name: Generate SBOM
-        run: |
-          curl -Lo $RUNNER_TEMP/sbom-tool https://github.com/microsoft/sbom-tool/releases/latest/download/sbom-tool-linux-x64
-          chmod +x $RUNNER_TEMP/sbom-tool
-          & $RUNNER_TEMP/sbom-tool gen -o ./reports
+        run: sbom-tool gen -o ./reports
       - name: Upload sbom results
         uses: actions/upload-artifact@master
         if: ${{ always() }}
