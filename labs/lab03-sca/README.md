@@ -2,7 +2,9 @@
 
 Software Composition Analysis (SCA) helps detect known vulnerabilities in the open-source libraries and frameworks used by your application. By scanning direct and transitive dependencies, SCA tools highlight security flaws and outdated packages, so you can take action before issues affect your production environment.
 
-Because these tools often rely on different vulnerability databases or specialize in particular ecosystems, it’s beneficial to run multiple checks. In this lab, you’ll use various SCA approaches — such as `OWASP Dependency Check`, .NET’s built-in commands, `RetireJS`, and `NPM audit` — to discover which best fits your workflow and provides the most comprehensive coverage.
+Because these tools often rely on different vulnerability databases or specialize in particular ecosystems, it’s beneficial to run multiple checks. This is often done in the Build stage of your CI/CD pipeline, and run during PR checks, ensuring that every commit is scanned for potential risks.
+
+In this lab, you’ll use various SCA approaches — such as `OWASP Dependency Check`, .NET’s built-in commands, `RetireJS`, and `NPM audit` — to discover which best fits your workflow and provides the most comprehensive coverage.
 
 ## Find vulnerabilities from dependencies
 
