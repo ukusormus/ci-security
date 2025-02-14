@@ -30,6 +30,8 @@ jobs:
 
           Write-Host "-- Fetch IP"
           $targetIp = docker inspect --format '{{ .NetworkSettings.IPAddress }}' $containerId
+          Write-Host "TargetIP was $targetIp"
+          $target = "http://"+$targetIp+":8080"
 
           Write-Host "-- Create results folder"
           mkdir ${{github.workspace}}/reports
@@ -38,7 +40,7 @@ jobs:
           chmod -R a+rw ${{github.workspace}}/reports
 
           Write-Host "-- Run docker ZAP"
-          docker run -v ${{github.workspace}}/reports:/zap/wrk:rw -t ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://$targetIp:8080 -J report_json.json -w report_md.md -r report_html.html -a
+          docker run -v ${{github.workspace}}/reports:/zap/wrk:rw -t ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t $target -J report_json.json -w report_md.md -r report_html.html -a
 
       - name: Upload Test results
         uses: actions/upload-artifact@master
