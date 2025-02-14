@@ -1,0 +1,145 @@
+{
+  "files": [],
+  "packages": [
+    {
+      "name": "System.Text.Json",
+      "SPDXID": "SPDXRef-Package-45619FD15844487732988C473029F976E1EE2FA0E14A8BC38DD8A4DB5F69913D",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "versionInfo": "8.0.4",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:nuget/System.Text.Json@8.0.4"
+        }
+      ],
+      "supplier": "NOASSERTION"
+    },
+    {
+      "name": "iTextSharp",
+      "SPDXID": "SPDXRef-Package-F88DB81603999019633517ECC7EE29A209A4C54F5EE4376DCF237105F8414B95",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "versionInfo": "5.5.13.4",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:nuget/iTextSharp@5.5.13.4"
+        }
+      ],
+      "supplier": "NOASSERTION"
+    },
+    {
+      "name": "BouncyCastle.Cryptography",
+      "SPDXID": "SPDXRef-Package-D319980C544AE1F91300F16EF9DF0274F2E5EC95978ABCA1CE1B593EB7A07737",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "versionInfo": "2.4.0",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:nuget/BouncyCastle.Cryptography@2.4.0"
+        }
+      ],
+      "supplier": "NOASSERTION"
+    },
+    {
+      "name": "System.Text.Encodings.Web",
+      "SPDXID": "SPDXRef-Package-D595C7CA243D238A94C6D0F9277EB98AE42EDA370259D4615A58E5BE78BAD562",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "versionInfo": "8.0.0",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:nuget/System.Text.Encodings.Web@8.0.0"
+        }
+      ],
+      "supplier": "NOASSERTION"
+    },
+    {
+      "name": "ExamplePackage",
+      "SPDXID": "SPDXRef-RootPackage",
+      "downloadLocation": "NOASSERTION",
+      "packageVerificationCode": {
+        "packageVerificationCodeValue": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+      },
+      "filesAnalyzed": true,
+      "licenseConcluded": "NOASSERTION",
+      "licenseInfoFromFiles": [
+        "NOASSERTION"
+      ],
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "versionInfo": "1",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:swid/Exampler/spdx.org/ExamplePackage@1?tag_id=5f3a9fc9-ea8b-4795-9cef-789423828fb1"
+        }
+      ],
+      "supplier": "Organization: Exampler",
+      "hasFiles": []
+    }
+  ],
+  "externalDocumentRefs": [],
+  "relationships": [
+    {
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-RootPackage",
+      "spdxElementId": "SPDXRef-DOCUMENT"
+    },
+    {
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-F88DB81603999019633517ECC7EE29A209A4C54F5EE4376DCF237105F8414B95",
+      "spdxElementId": "SPDXRef-RootPackage"
+    },
+    {
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-D595C7CA243D238A94C6D0F9277EB98AE42EDA370259D4615A58E5BE78BAD562",
+      "spdxElementId": "SPDXRef-Package-45619FD15844487732988C473029F976E1EE2FA0E14A8BC38DD8A4DB5F69913D"
+    },
+    {
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-D319980C544AE1F91300F16EF9DF0274F2E5EC95978ABCA1CE1B593EB7A07737",
+      "spdxElementId": "SPDXRef-Package-F88DB81603999019633517ECC7EE29A209A4C54F5EE4376DCF237105F8414B95"
+    },
+    {
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-45619FD15844487732988C473029F976E1EE2FA0E14A8BC38DD8A4DB5F69913D",
+      "spdxElementId": "SPDXRef-RootPackage"
+    }
+  ],
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "ExamplePackage 1",
+  "documentNamespace": "https://spdx.org/spdxdocs/sbom-tool-3.0.1-4775ba02-4d7b-4891-9591-1f66e331524c/ExamplePackage/1/LirdOsFwBE26VhzzAuZzwQ",
+  "creationInfo": {
+    "created": "2025-01-16T14.31.09Z",
+    "creators": [
+      "Organization: Exampler",
+      "Tool: Microsoft.SBOMTool-3.0.1"
+    ]
+  },
+  "documentDescribes": [
+    "SPDXRef-RootPackage"
+  ]
+}
