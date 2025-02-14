@@ -34,6 +34,9 @@ jobs:
           Write-Host "-- Create results folder"
           mkdir ${{github.workspace}}/reports
 
+          Write-Host "-- Chmod results folder rights"
+          chmod -R a+rw ${{github.workspace}}/reports
+
           Write-Host "-- Run docker ZAP"
           docker run -v ${{github.workspace}}/reports:/zap/wrk:rw -t ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://172.17.0.2:8080 -J report_json.json -w report_md.md -r report_html.html -a
 
