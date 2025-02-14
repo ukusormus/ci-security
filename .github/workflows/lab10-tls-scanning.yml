@@ -24,7 +24,7 @@ jobs:
         run: sudo apt install nmap
       - name: Scan TLS for given domain
         run: |
-          $scanResults = ./scripts/tlsaudit.ps1 www.zure.com
+          $scanResults = ./scripts/tlsaudit.ps1 huuhka.net
           $grade = $scanResults[0]
           $ciphers = $scanResults[1]
 
