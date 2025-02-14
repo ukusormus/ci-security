@@ -28,6 +28,8 @@ Normal scenario that I would have used githooks would be to enforce certain kind
 
 By default hooks are in `$GIT_DIR/hooks` and they pretty much support only bash script. If you want to run e.g. powershell then you need to have a wrapper bash script that feeds the parameters for the powershell which would be totally unneccessary if you are confident with bash.
 
+You also want to ensure that end-of-line is LF. You might need to change `.editorconfig`. You might need to also add `.gitattributes` and config everything else to have eol=crlf but the hooks directory to have eol=lf,
+
 ## Links
 
 - [githooks](https://git-scm.com/docs/githooks)
