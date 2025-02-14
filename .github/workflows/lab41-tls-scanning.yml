@@ -2,7 +2,7 @@ name: Lab41 TLS scanning
 run-name: Lab41 - ${{ github.actor }} is scanning TLS ciphers 🚀
 permissions: read-all
 on:
-  workflow_call:
+  workflow_dispatch:
 jobs:
   example-job:
     runs-on: ubuntu-latest

@@ -2,7 +2,7 @@ name: Lab13 SBOM
 run-name: Lab13 - ${{ github.actor }} is running SBOM scans 🚀
 permissions: read-all
 on:
-  workflow_call:
+  workflow_dispatch:
 jobs:
   example-job:
     runs-on: ubuntu-latest

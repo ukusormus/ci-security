@@ -2,7 +2,7 @@ name: Lab50 SARIF
 run-name: Lab50 - ${{ github.actor }} is creating SARIF reports 🚀
 permissions: read-all
 on:
-  workflow_call:
+  workflow_dispatch:
 jobs:
   example-job:
     runs-on: ubuntu-latest

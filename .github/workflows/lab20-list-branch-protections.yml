@@ -2,7 +2,7 @@ name: Lab20 List branch protections
 run-name: Lab20 - ${{ github.actor }} is listing branch protections with GraphQL 🚀
 permissions: read-all
 on:
-  workflow_call:
+  workflow_dispatch:
 jobs:
   example-job:
     runs-on: ubuntu-latest

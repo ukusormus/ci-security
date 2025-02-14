@@ -2,7 +2,7 @@ name: Lab12 License check
 run-name: Lab12 - ${{ github.actor }} is inspecting used licenses 🔎
 permissions: read-all
 on:
-  workflow_call:
+  workflow_dispatch:
 jobs:
   example-job:
     runs-on: ubuntu-latest

@@ -2,7 +2,7 @@ name: Lab11 Package Locks
 run-name: Lab11 - ${{ github.actor }} is locking packages 🔒
 permissions: read-all
 on:
-  workflow_call:
+  workflow_dispatch:
 jobs:
   example-job:
     runs-on: ubuntu-latest
