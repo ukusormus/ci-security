@@ -32,7 +32,7 @@ jobs:
           $targetIp = docker inspect --format '{{ .NetworkSettings.IPAddress }}' $containerId
 
           Write-Host "-- Store variables to output"
-          docker run -v $(pwd):/reports:rw -t zaproxy/zap-stable zap-full-scan.py -t http://172.17.0.2:8080 -J report_json.json -w report_md.md -r report_html.html -a
+          docker run -v $(pwd):/reports:rw -t ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://172.17.0.2:8080 -J report_json.json -w report_md.md -r report_html.html -a
       - name: Upload Test results
         uses: actions/upload-artifact@master
         if: ${{ always() }}
