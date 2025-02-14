@@ -1,5 +1,16 @@
 # Lab10 - TLS Cipher scanning
 
+| Title          | Description                                                                                                                                                                                            |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Target         | Check your applications TLS cipher suites                                                                                                                                                              |
+| Difficulty     | Hard                                                                                                                                                                                                   |
+| Measure        | TLS cipher suite strength                                                                                                                                                                              |
+| Threat         | [OWASP TOP 10: Misconfiguration](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)                                                                                                             |
+| Detect         | Weak or non-existent transport layer security                                                                                                                                                          |
+| Prevent        | Weak or non-existent transport layer security                                                                                                                                                          |
+| Stage          | Deploy                                                                                                                                                                                                 |
+| Known problems | You need live target and sometimes it is not public. So you might need an agent inside your network to do this. Depending also on complexity of infrastructure this might differ between environments. |
+
 Transport Layer Security (TLS) ensures data confidentiality and integrity over the network. However, older or misconfigured versions and ciphers can expose security weaknesses. Tools like `Nmap`, `Qualys`, or `OpenSSL` can help reveal whether outdated protocols (e.g., TLS 1.0) or insecure ciphers (e.g., RC4) remain in your environment, allowing you to take corrective action before attackers exploit those vulnerabilities.
 
 In this lab, you’ll scan a domain’s TLS configuration to identify which ciphers and TLS versions are in use.
