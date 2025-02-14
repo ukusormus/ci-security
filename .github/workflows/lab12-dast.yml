@@ -23,7 +23,7 @@ jobs:
         id: docker-build
         run: |
           Write-Host "-- Build docker"
-          docker build -t vulnerable-app-image -f /apps/vulnerable-app/Dockerfile .
+          docker build -t vulnerable-app-image -f ./apps/vulnerable-app/Dockerfile .
           Write-Host "-- Run docker"
           $containerId = docker run --tty --detach vulnerable-app-image --publish 8080:8080
           Write-Host "-- Fetch IP"
