@@ -13,9 +13,11 @@ on:
   # Make it possible to manually run this workflow
   workflow_dispatch:
 jobs:
-  Build-Job:
+  http-header-scanning:
     runs-on: ubuntu-latest
     # Steps to actually build the application
     steps:
       - name: Install Mozilla Observatory
-        run: dotnet build
+        run: npm install --global @mdn/mdn-http-observatory
+      - name: Run Mozilla Observatory
+        run: mdn-http-observatory-scan mdn.dev
