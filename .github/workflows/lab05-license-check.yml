@@ -60,3 +60,25 @@ jobs:
         run: |
           $allowedLicenses = "[`"MIT`"]" | Out-File allowed.json
           dotnet-project-licenses --input . --allowed-license-types allowed.json
+
+  Check-licensed-with-scancode:
+    name: "Licenses: scancode"
+    runs-on: ubuntu-latest
+    # Steps to actually build the application
+    steps:
+      # Check out the git repository
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: scancode-inputs
+      # Ensure proper version of .NET
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "8.0.x"
+      - name: Restore
+        run: dotnet restore
+      - uses: nexB/scancode-action@alpha
+        with:
+          pipelines: "scan_codebase,find_vulnerabilities"
+          output-formats: "json xlsx spdx cyclonedx"
