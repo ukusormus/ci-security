@@ -15,6 +15,10 @@ Transport Layer Security (TLS) ensures data confidentiality and integrity over t
 
 In this lab, you’ll scan a domain’s TLS configuration to identify which ciphers and TLS versions are in use.
 
+## TODO
+
+Find reason why nmap gives different results here than in my local machine. Linux client tls version?
+
 ## Scan TLS version
 
 Scan TLS version of the domain.
