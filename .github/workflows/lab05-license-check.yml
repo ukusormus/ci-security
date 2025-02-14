@@ -31,7 +31,9 @@ jobs:
         run: dotnet tool install -g dotnet-delice
       - name: Check licenses with Delice
         run: |
-          $licenses = ./scripts/licenseaudit.ps1
+          $licenseJson = dotnet delice .\ci-security.sln --json | ConvertFrom-Json
+          $licenses = @()
+          $licenseJson.Projects | ForEach-Object { $_.licenses | Select-Object -ExpandProperty expression | ForEach-Object { $licenses += $_ } }
           $unwantedLicenses = $licenses | Where-Object { $_ -ne "MIT" }
           if ($unwantedLicenses -gt 0) {
             Write-Host "Licensed found $unwantedLicenses"
