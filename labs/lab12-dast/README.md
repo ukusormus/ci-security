@@ -37,6 +37,7 @@ This exercise will be hard since running docker happens in one step and you can'
 - [Zed Attack Proxy Docker](https://www.zaproxy.org/docs/docker/about/)
 - [Zed Attack Proxy GitHub Action](https://github.com/marketplace/actions/zap-full-scan)
 - [ffuf](https://github.com/ffuf/ffuf)
+- [SecLists for common paramnames, folder names etc](https://github.com/danielmiessler/SecLists)
 
 ## Solution
 
