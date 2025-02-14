@@ -8,8 +8,7 @@ param(
   $fileName = "mdn.sarif.json"
 )
 
-$domain = "huuhka.net"
-$mozillaResultJson = #mdn-http-observatory-scan $domain
+$mozillaResultJson = mdn-http-observatory-scan $domain
 
 # Convert JSON to PS Object
 $mozillaTestResults =
