@@ -1,0 +1,10 @@
+name: Vulnerable pipeline
+run-name: Vulnerable pipeline for checkov
+on:
+  workflow_call:
+jobs:
+  Hello-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run hello world
+        run: echo "🎉 Step of the job is running on ${{ runner.os }}!"
