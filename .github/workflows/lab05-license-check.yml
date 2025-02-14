@@ -33,7 +33,6 @@ jobs:
         run: |
           $unwantedLicenses = ./scripts/licenseaudit.ps1 | Where-Object { $_ -ne "MIT" }
           if ($unwantedLicenses -gt 0) {
-            Write-Host "Licensed found $unwantedLicenses"
             # Set proper error message
-            core.error('Unwanted licenses detected', {file: scripts/licenseaudit.ps1})
+            core.error('Unwanted licenses detected: $unwantedLicenses', {file: scripts/licenseaudit.ps1})
           }
