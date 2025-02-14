@@ -48,6 +48,8 @@ jobs:
         with:
           name: ZAP report
           path: ${{github.workspace}}/reports
+# Commented out because it looked like the next step did not have anymore network access to last steps running target
+# Still pretty handy if you have live target
 #      - name: ZAP Scan
 #        uses: zaproxy/action-full-scan@v0.12.0
 #        env:
