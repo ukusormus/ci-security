@@ -15,6 +15,8 @@ Software Bill of Materials (SBOM) is one of the things that might be mandatory i
 
 There seems to be two formats that are often used: SPDX and CycloneDX. Based on my experience CycloneDX would be preferred choice for me but I have not much to back my claim.
 
+Generating the SBOM would be the first step. Once you are familiar with that you might want to check [OWASP Dependency Track](https://dependencytrack.org/) for SBOM analysis and dashboards.
+
 ## Generate SBOM
 
 Generate SBOM from the vulnerable-app familiar from earlier exercises in CI pipeline.
@@ -25,6 +27,7 @@ Generate SBOM from the vulnerable-app familiar from earlier exercises in CI pipe
 - [CycloneDX format](https://github.com/CycloneDX/specification)
 - [sbom-tool](https://github.com/microsoft/sbom-tool)
 - [CycloneDX](https://github.com/CycloneDX/cyclonedx-dotnet)
+- [Dependency Track](https://dependencytrack.org/)
 
 ## Solution
 
