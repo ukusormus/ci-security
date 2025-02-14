@@ -92,7 +92,7 @@ jobs:
           path: ${{github.workspace}}/reports
       - name: Check licenses found with scancode
         run: |
-          $unwantedLicenses = ./scripts/scancodeaudit.ps1 ./reports/output.json | Where-Object { $_ -ne "MIT" }
+          $unwantedLicenses = ./scancode-inputs/scripts/scancodeaudit.ps1 ./reports/output.json | Where-Object { $_ -ne "MIT" }
           if ($unwantedLicenses -gt 0) {
             # Set proper error message
             echo "::error file=scripts/scancodeaudit.ps1,title=Unwanted licenses detected::Unwanted licenses detected: $unwantedLicenses"
