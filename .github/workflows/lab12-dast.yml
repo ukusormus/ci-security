@@ -23,7 +23,7 @@ jobs:
         id: docker-build
         run: Write-Host "Build docker"
           docker build -t vulnerable-app-image -f /apps/vulnerable-app/Dockerfile .
-          $containerId = docker run -t -d vulnerable-app-image -p 8080:8080
+          $containerId = docker run --tty --detach vulnerable-app-image --publish 8080:8080
           $targetIp = docker inspect --format '{{ .NetworkSettings.IPAddress }}' $containerId
           Add-Content -Path $env:GITHUB_OUTPUT -Value "ZAP_TARGET_IP=$targetIp"
           Add-Content -Path $env:GITHUB_OUTPUT -Value "ZAP_TARGET_CONTAINER_ID=$containerId"
