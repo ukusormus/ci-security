@@ -1,0 +1,25 @@
+# Name of the workflow
+name: Lab06 SAST
+# How the workflow run is named in GitHub
+run-name: Lab06 - ${{ github.actor }} is finding vulns 🔎
+# Set your preferences for the script
+defaults:
+  run:
+    shell: pwsh
+on:
+  # Make it possible to other workflows to call this
+  workflow_call:
+  # Make it possible to manually run this workflow
+  workflow_dispatch:
+jobs:
+  SAST-with-Semgrep:
+    name: "SAST: Semgrep CE"
+    runs-on: ubuntu-latest
+    container:
+      # A Docker image with Semgrep installed. Do not change this.
+      image: semgrep/semgrep
+    steps:
+      # Fetch project source with GitHub Actions Checkout. Use either v3 or v4.
+      - uses: actions/checkout@v4
+      # Run the "semgrep scan" command on the command line of the docker image.
+      - run: semgrep scan --config auto
