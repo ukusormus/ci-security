@@ -5,6 +5,10 @@ Welcome to the ci-security repository! These labs are designed to teach you how 
 - Code: <https://github.com/Rinorragi/ci-security>
 - Slides: <https://rinorragi.github.io/ci-security/>
 
+## Disclaimer
+
+Obey the law. Don't attack targets that you don't have permission. Don't abuse the good will of those who let us use [GitHub hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners). Cryptomining was already a problem few years back. Abusive usage will eventually hurt community in restrictions of runner usage.
+
 ## Prerequisites
 
 Before diving in, make sure you have the following:
@@ -37,9 +41,18 @@ Before diving in, make sure you have the following:
 4. **Check the Solutions**
    - If you get stuck, refer to the lab-specific README files or the workflows in `.github/workflows` for a hint or a complete solution.
 
-### Tools Used
+## Working with the repository
 
-Throughout these labs, you’ll encounter various security and automation tools. None of these are endorsed by default; they are simply examples chosen for their ease of setup and community support. Feel free to swap in other tools that fit your organization’s needs.
+Normal development pattern of GitHub Actions is:
+
+1. Make local changes to your code
+2. git commit & git push
+3. Run the workflow and hope for the best
+4. Goto 1 (until you are satisfied)
+
+To be able to run any version of GitHub action you need to have the `yml` file in the `default` (main) branch. After that you can choose to run different versions of that pipeline from selected branch.
+
+If you want to jump into deep water you could try running them locally [at your workstation](/labs/lab5x-next-steps/lab53-act/README.md).
 
 ## Apps
 
@@ -65,3 +78,10 @@ Apps are pretty boring.
 - [Lab50 - SARIF file generation](/labs/lab5x-next-steps/lab50-sarif/README.md)
 - [Lab51 - githooks](/labs/lab5x-next-steps/lab51-githooks/README.md)
 - [Lab52 - Defect Dojo](/labs/lab5x-next-steps/lab52-defect-dojo/README.md)
+- [Lab53 - nektos/act](/labs/lab5x-next-steps/lab53-act/README.md)
+
+## Tools Used
+
+Throughout these labs, you’ll encounter various security and automation tools. None of these are endorsed by default; they are simply examples chosen for their ease of setup and community support. Feel free to swap in other tools that fit your organization’s needs.
+
+[Check here for the preinstalled components of GitHub runners](https://github.com/actions/runner-images).
