@@ -114,7 +114,7 @@ $testResults
   }
 }
 
-$null = $sarifResult | ConvertTo-Json -Depth 10 | Out-File $fileName
+$null = $sarifResult | ConvertTo-Json -Depth 10 -Compress | Out-File $fileName
 
 
 
