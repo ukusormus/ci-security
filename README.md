@@ -84,8 +84,8 @@ Apps are pretty boring.
 - [Lab42 - Dynamic Application Security Testing](/labs/lab4x-testing-live-target/lab42-dast/README.md)
 - [Lab50 - SARIF file generation](/labs/lab5x-next-steps/lab50-sarif/README.md)
 - [Lab51 - githooks (contains TODO)](/labs/lab5x-next-steps/lab51-githooks/README.md)
-- [Lab52 - Defect Dojo (contains TODO)](/labs/lab5x-next-steps/lab52-defect-dojo/README.md)
-- [Lab53 - nektos/act (contains TODO)](/labs/lab5x-next-steps/lab53-act/README.md)
+- [Lab52 - Defect Dojo](/labs/lab5x-next-steps/lab52-defect-dojo/README.md)
+- [Lab53 - nektos/act](/labs/lab5x-next-steps/lab53-act/README.md)
 
 ## Tools Used
 
