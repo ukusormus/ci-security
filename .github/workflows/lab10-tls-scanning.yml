@@ -30,7 +30,7 @@ jobs:
 
           Write-Host "---- CIPHERS ----"
           For ($i = 1; $i -le $scanResults.Length; $i++) {
-            Write-Host $scanResults.[i]
+            Write-Host $scanResults[i]
           }
           Write-Host "----- GRADE -----"
           Write-Host $grade
