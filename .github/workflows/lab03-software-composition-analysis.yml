@@ -34,4 +34,4 @@ jobs:
         run: dotnet build
       - name: Use dotnet tools to test vulns and to fail the job
         run: $vulnCount = .\scripts\dotnetaudit.ps1
-          if ($vulnCount > 0) { echo "::error vulnerabilities found for total of $vulnCount"; exit 1; }
+          if ($vulnCount > 0) { echo "::error file=scripts/dotnetaudit.ps1,line=15,col=1,endColumn=21,title=Vulnerabilities above zero::Vulnerabilities found for total of $vulnCount"; exit 1; }
