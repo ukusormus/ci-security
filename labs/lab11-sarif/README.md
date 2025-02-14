@@ -1,5 +1,16 @@
 # Lab11 - Using OASIS Static Analysis Results Interchange Format (SARIF)
 
+| Title          | Description                                                                                                |
+| -------------- | ---------------------------------------------------------------------------------------------------------- |
+| Target         | Learn how to generate SARIF to integrate your custom scripts to security tooling.                          |
+| Difficulty     | Hard                                                                                                       |
+| Measure        | Findings from custom tooling in similar manner as other findings                                           |
+| Threat         | N/A as it is dependant on custom tooling                                                                   |
+| Detect         | N/A as it is dependant on custom tooling                                                                   |
+| Prevent        | N/A as it is dependant on custom tooling                                                                   |
+| Stage          | N/A as it is dependant on custom tooling                                                                   |
+| Known problems | Format is kind of complex. It also looks like that validator and GitHub don't exactly agree on the schema. |
+
 OASIS SARIF is standard for common output format for static analysis tools. Understanding the format makes it easier to integrate your own scripts to tools GitHub for example supports SARIF out of the box and thus if you are able to produce SARIF from your custom scripts then you are able to easily integrate them to security tooling.
 
 ## Create custom SARIF file and integrate it to GitHub tooling
