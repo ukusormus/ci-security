@@ -80,8 +80,10 @@ $testResults
   $sarifResult.runs[0].results += [PSCustomObject]@{
     ruleId    = $_.RuleId | Out-String
     level     = "error"
+    kind      = "fail"
     message   = [PSCustomObject]@{
       text = $_.MessageText | Out-String
+      id   = $_.RuleId
     }
     locations = @($sarifPhysicalLocationTemplate)
   }
