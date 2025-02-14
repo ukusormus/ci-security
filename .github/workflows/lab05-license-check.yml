@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 jobs:
   Check-licensed-with-delice:
-    name: "Check licenses with delice"
+    name: "Licenses: delice"
     runs-on: ubuntu-latest
     # Steps to actually build the application
     steps:
@@ -40,7 +40,7 @@ jobs:
           }
 
   Check-licensed-with-project-licenses:
-    name: "Check licenses with project licenses"
+    name: "Licenses: dotnet-project-licenses"
     runs-on: ubuntu-latest
     # Steps to actually build the application
     steps:
@@ -58,7 +58,5 @@ jobs:
         run: dotnet tool install -g dotnet-project-licenses
       - name: Check licenses with dotnet-project-licenses
         run: |
-          $allowedLicenses = $()
-          $allowedLicenses += "MIT"
-          $allowedLicenses | ConvertTo-Json | Out-File allowed.json
+          $allowedLicenses = "[`"MIT`"]" | Out-File allowed.json
           dotnet-project-licenses --input . --allowed-license-types allowed.json
