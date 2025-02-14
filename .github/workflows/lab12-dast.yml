@@ -130,5 +130,5 @@ jobs:
         uses: actions/upload-artifact@master
         if: ${{ always() }}
         with:
-          name: Nuclei report
+          name: ffuf report
           path: ${{github.workspace}}/ffufreports
