@@ -33,9 +33,14 @@ jobs:
       - name: Build application
         run: dotnet build
       - name: Use dotnet tools to test vulns and to fail the job
-        run: |
+        run: | # Use | to tell github actions that this is multiline operation
           $vulnCount = .\scripts\dotnetaudit.ps1
           Write-Host "Run dotnetaudit.ps1 with total of $vulnCount vulnerabilities"
           Write-Host "---OUTPUT---"
           Get-content vulnerable.out
-          if ($vulnCount -gt 0) { echo "::error file=scripts/dotnetaudit.ps1,line=19,col=1,endColumn=21,title=Vulnerabilities above zero::Vulnerabilities found for total of $vulnCount" }
+          if ($vulnCount -gt 0) {
+            # Set proper error message
+            echo "::error file=scripts/dotnetaudit.ps1,line=19,col=1,endColumn=21,title=Vulnerabilities above zero::Vulnerabilities found for total of $vulnCount"
+            # Error message does not fail the job, use exit 1 to actually make it fail
+            exit 1
+          }
