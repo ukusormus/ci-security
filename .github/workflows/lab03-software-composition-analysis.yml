@@ -11,9 +11,7 @@ on:
   workflow_call:
   # Make it possible to manually run this workflow
   workflow_dispatch:
-# The actual jobs
 jobs:
-  # Job to test vulnerabilities with OWASP Dependency Check
   Test-Vulnerabilities-With-Dependency-Check:
     name: OWASP Dependency Check
     runs-on: ubuntu-latest
@@ -53,7 +51,6 @@ jobs:
           name: OWASP Dependency Check report
           path: ${{github.workspace}}/reports
 
-  # Job named Build-Job that builds the example applications
   Test-Vulnerabilities-Natively:
     name: "dotnet native check"
     runs-on: ubuntu-latest
@@ -86,7 +83,6 @@ jobs:
             exit 1
           }
 
-  # Job named Build-Job that builds the example applications
   Test-Vulnerabilities-With-RetireJS:
     name: "RetireJS check"
     runs-on: ubuntu-latest
