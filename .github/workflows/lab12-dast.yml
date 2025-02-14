@@ -124,7 +124,7 @@ jobs:
           Write-Host "-- Download fuzz wordlist"
           Invoke-WebRequest https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Discovery/Web-Content/IIS.fuzz.txt -OutFile ./iisfuzz.txt
           Write-Host "-- Fuzz with ffuf"
-          ffuf -w ./iisfuzz.txt -u $target -json | ${{github.workspace}}/ffufreports/fuzzoutput.json
+          ffuf -w ./iisfuzz.txt -u $target -json | Out-File "${{github.workspace}}/ffufreports/fuzzoutput.json"
 
       - name: Upload Test results
         uses: actions/upload-artifact@master
