@@ -32,7 +32,7 @@ jobs:
       - name: Generate sbom with CycloneDX
         run: dotnet CycloneDX ci-security.sln --json --exclude-dev -o ./reports
       - name: Upload sbom results
-        uses: actions/upload-artifact@masterad
+        uses: actions/upload-artifact@master
         if: ${{ always() }}
         with:
           name: CycloneDX SBOM
