@@ -25,18 +25,14 @@ jobs:
           dotnet-version: 8.0.x
       - name: Install CycloneDX
         run: dotnet tool install --global CycloneDX
-      - name: Install .NET dependencies
-        run: dotnet restore
-      - name: Build application
-        run: dotnet build
       - name: Generate sbom with CycloneDX
-        run: dotnet CycloneDX ci-security.sln --json --exclude-dev -o ./reports
+        run: dotnet CycloneDX ci-security.sln --json --exclude-dev -o ./cyclone-reports
       - name: Upload sbom results
         uses: actions/upload-artifact@master
         if: ${{ always() }}
         with:
           name: CycloneDX SBOM
-          path: ${{github.workspace}}/reports
+          path: ${{github.workspace}}/cyclone-reports
   spdx:
     runs-on: ubuntu-latest
     steps:
@@ -48,15 +44,11 @@ jobs:
           dotnet-version: 8.0.x
       - name: Install Microsoft SBOM tool
         run: dotnet tool install --global Microsoft.Sbom.DotNetTool
-      - name: Install .NET dependencies
-        run: dotnet restore
-      - name: Build application
-        run: dotnet build ci-security.sln --output buildOutput
       - name: Generate SBOM
-        run: sbom-tool generate -PackageSupplier "Ci-Security Example ltd" -BuildComponentPath ./apps -PackageName ExamplePackage -PackageVersion 1 -BuildDropPath ./reports
+        run: sbom-tool generate -PackageSupplier "Ci-Security Example ltd" -BuildComponentPath ./apps -PackageName ExamplePackage -PackageVersion 1 -BuildDropPath ./sbom-reports
       - name: Upload sbom results
         uses: actions/upload-artifact@master
         if: ${{ always() }}
         with:
           name: SPDX SBOM
-          path: ${{github.workspace}}/reports
+          path: ${{github.workspace}}/sbom-reports
