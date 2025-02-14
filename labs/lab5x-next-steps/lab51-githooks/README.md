@@ -20,6 +20,10 @@ We are interested this solely because in some scenarios this enables giving feed
 
 Normal scenario that I would have used githooks would be to enforce certain kind of commit message format to ensure trackability between code and ticketing system that is used to track the progress (e.g. Jira). That would be fast and useful. But in some cases I have also agreed with team to have certain kind of testing done in prior of pushing or committing to ensure higher quality of commits in the first place. This might not always fit in for the development flow.
 
+## TODO
+
+Actual working examples
+
 ## Implement githook
 
 1. Implement githook to list files that were changed in the commit process that could be feeded for secret scanning or static code analysis tool
