@@ -69,7 +69,7 @@ Apps are pretty boring.
 - [Lab12 - License check](/labs/lab1x-dependencies/lab12-license-check/README.md)
 - [Lab13 - Software Bill of Materials](/labs/lab1x-dependencies/lab13-sbom/README.md)
 - [Lab20 - Branch protections](/labs/lab2x-development/lab20-branch-protections/README.md)
-- [Lab21 - Static Application Security Testing (contains TODO)](/labs/lab2x-development/lab21-sast/README.md)
+- [Lab21 - Static Application Security Testing](/labs/lab2x-development/lab21-sast/README.md)
 - [Lab22 - Secret scanning (contains TODO)](/labs/lab2x-development/lab22-secret-scanning/README.md)
 - [Lab30 - IaC scanning](/labs/lab3x-infrastructure/lab30-iac-scanning/README.md)
 - [Lab40 - HTTP header scanning](/labs/lab4x-testing-live-target/lab40-http-header-scanning/README.md)
