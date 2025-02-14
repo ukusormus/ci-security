@@ -1,7 +1,7 @@
 # Name of the workflow
 name: Lab01 Hello Disobey
 # How the workflow run is named in GitHub
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: Lab01 - ${{ github.actor }} is testing out GitHub Actions 🚀
 # Set your preferences for the script
 defaults:
   run:
@@ -25,8 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     # Steps to actually build the application
     steps:
+      # Check out the git repository
       - name: Checkout
         uses: actions/checkout@v4
+      # Ensure proper version of .NET
       - name: Setup dotnet
         uses: actions/setup-dotnet@v3
         with:
