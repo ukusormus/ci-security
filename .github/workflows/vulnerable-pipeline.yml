@@ -31,10 +31,13 @@ jobs:
           Write-Host "-- Run docker"
           $containerId = docker run --tty --detach -p ($httpsPort+":"+$httpsPort) -e ASPNETCORE_HTTPS_PORTS=$httpsPort -e ASPNETCORE_ENVIRONMENT=Development -v ${HOME}/.microsoft/usersecrets/:/home/app/.microsoft/usersecrets -v ./cert/:/https/ -e ASPNETCORE_Kestrel__Certificates__Default__Path=/https/secret_certificate.pfx -e ASPNETCORE_Kestrel__Certificates__Default__Password=$password vulnerable-app-image
 
+          Write-Host "-- Wait for the docker for a moment"
+          Start-Sleep -Seconds 10
+
           Write-Host "-- Fetch IP"
           $targetIp = docker inspect --format '{{ .NetworkSettings.IPAddress }}' $containerId
           Write-Host "TargetIP was $targetIp"
           $target = "https://"+$targetIp+":$httpsPort"
 
           Write-Host "Fetch something from target"
-          curl $target
+          curl --insecure $target
