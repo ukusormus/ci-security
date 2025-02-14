@@ -2,10 +2,6 @@
 name: Lab06 SAST
 # How the workflow run is named in GitHub
 run-name: Lab06 - ${{ github.actor }} is finding vulns 🔎
-# Set your preferences for the script
-defaults:
-  run:
-    shell: pwsh
 on:
   # Make it possible to other workflows to call this
   workflow_call:
