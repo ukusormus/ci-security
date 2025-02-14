@@ -17,7 +17,7 @@ jobs:
       - name: Run the app
         run: |
           $password = OH_NOES_EXPOSED_PASSWORD_IS_BAD
-          $httpsPort = 8001
+          $httpsPort = "8001"
           Write-Host "-- Build docker"
           docker build -t vulnerable-app-image -f ./apps/vulnerable-app/Dockerfile .
 
