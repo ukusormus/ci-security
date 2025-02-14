@@ -15,6 +15,7 @@ on:
 jobs:
   # Job named Build-Job that builds the example applications
   Test-Vulnerabilities-Natively:
+    name: "dotnet native check"
     runs-on: ubuntu-latest
     # Steps to actually build the application
     steps:
@@ -46,6 +47,7 @@ jobs:
           }
   # Job to test vulnerabilities with OWASP Dependency Check
   Test-Vulnerabilities-With-Dependency-Check:
+    name: OWASP Dependency Check
     runs-on: ubuntu-latest
     # Steps to actually build the application
     steps:
@@ -63,6 +65,7 @@ jobs:
       # Sometimes (even when considered as a bad practice) part of the dependencies are fetched during build, so better to build first
       - name: Build application
         run: dotnet build
+      # Run OWASP Dependency check
       - name: Dependency Check
         uses: dependency-check/Dependency-Check_Action@main
         id: Depcheck
@@ -74,8 +77,10 @@ jobs:
           args: >
             --failOnCVSS 7
             --enableRetired
+      # Use always() to ensure that even if the above fails on threshold the results are uploaded
       - name: Upload Test results
         uses: actions/upload-artifact@master
+        if: ${{ always() }}
         with:
           name: Depcheck report
           path: ${{github.workspace}}/reports
