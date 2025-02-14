@@ -61,3 +61,6 @@ Apps are pretty boring.
 - [Lab09 - HTTP header scanning](/labs/lab09-http-header-scanning/README.md)
 - [Lab10 - TLS cipher scanning](/labs/lab10-tls-scanning/README.md)
 - [Lab11 - SARIF file generation](/labs/lab11-sarif/README.md)
+- [Lab11 - SARIF file generation](/labs/lab12-dast/README.md)
+- [Lab11 - SARIF file generation](/labs/lab13-sbom/README.md)
+- [Lab11 - SARIF file generation](/labs/lab14-githooks/README.md)
