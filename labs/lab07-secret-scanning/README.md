@@ -1,8 +1,12 @@
 # Lab07 - Secret scanning
 
+Secret scanning detects credentials and other sensitive information that may be accidentally stored in source code or configuration files. Tools like `Trufflehog`, `Gitleaks`, and `GitGuardian` can be integrated into your CI pipeline to automatically flag any discovered secrets. Some tools provide additional features, like preventing secrets from being pushed to the repository, whereas others only scan for secrets without taking action.
+
+In this lab, you’ll configure secret scanning tools to identify and protect against accidental exposure of secrets in the codebase.
+
 ## Find secrets from the solution with secret scanning tools
 
-GitHub Advanced Security already scans secrets from public repositories. But it has its limitations.
+`GitHub Advanced Security` already scans secrets from public repositories. But it has its limitations.
 
 ## Links
 

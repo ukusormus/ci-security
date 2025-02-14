@@ -1,5 +1,26 @@
 # Lab01 - Hello GitHub Actions
 
+GitHub Actions is a powerful CI/CD platform that lets you automate tasks directly from your GitHub repository.
+
+## Build Pipeline Overview
+
+A build pipeline is a sequence of automated steps that compile, package, and test your code. By running these steps consistently and automatically (for example, on every pull request), you gain confidence that the code is functional and meets quality standards before merging changes.
+
+### Splitting Build and Release
+
+It’s common practice to keep **build** and **release** steps separate. During the **build** phase, you typically compile the code, run tests, and produce artifacts (e.g., binaries or container images). These artifacts are then stored (uploaded) and later downloaded for the **release** phase, where the final deployment or publishing occurs. This separation allows you to:
+
+- **Run Automated Checks** on pull requests or feature branches without triggering a full release.
+- **Decouple Build and Deploy** to ensure that only tested and approved code is released.
+- **Maintain Reproducibility** by building once and deploying the exact same artifacts.
+- **Scale Teams** by letting different roles (e.g., developers vs. release managers) work on their respective parts without interference.
+
+### Workshop Focus
+
+The labs in this workshop primarily focus on the **build** phase of the CI/CD process. You’ll learn to incorporate various security checks into your build pipelines, ensuring issues are caught early and automatically, well before code moves on to release and production.
+
+In this lab, you’ll start from the basics and set up a simple workflow to print text as a “Hello World” introduction. This first step will help you understand how GitHub Actions works, laying the groundwork for more complex automations later in the workshop.
+
 ## Run a simple GitHub action
 
 Try to print text with GitHub actions!
