@@ -100,19 +100,13 @@ $testResults
     help             = [PSCustomObject]@{
       text = $_.Description | Out-String
     }
-    helpUri          = "https://developer.mozilla.org" + $_.Link | Out-String
+    helpUri          = ("https://developer.mozilla.org" + $_.Link) | Out-String
     properties       = [PSCustomObject]@{
       precision           = "very-high"
       severity            = "error"
       "security-severity" = "6"
     }
   }
-}
-
-$null =
-$testResults
-| ForEach-Object {
-
 }
 
 $null = $sarifResult | ConvertTo-Json -Depth 10 | Out-File $fileName
