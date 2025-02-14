@@ -14,6 +14,10 @@ on:
   workflow_dispatch:
 jobs:
   http-header-scanning:
+    permissions:
+      contents: read # for actions/checkout to fetch code
+      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
+      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
     runs-on: ubuntu-latest
     # Steps to actually build the application
     steps:
@@ -24,7 +28,7 @@ jobs:
       - name: Run Mozilla Observatory and create SARIF results
         run: ./scripts/mozilla-observatory-sarif-generator.ps1 "huuhka.net" "mdn-results.sarif"
       - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         if: success() || failure()
         with:
           sarif_file: "mdn-results.sarif"

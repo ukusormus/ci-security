@@ -68,10 +68,10 @@ $null =
 $testResults
 | ForEach-Object {
   $sarifResult.runs[0].results += [PSCustomObject]@{
-    ruleId    = $_.Rule
+    ruleId    = $_.Rule | Out-String
     level     = "error"
     message   = [PSCustomObject]@{
-      text = $_.MessageText
+      text = $_.MessageText | Out-String
     }
     locations = @($sarifPhysicalLocationTemplate)
   }
