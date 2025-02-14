@@ -27,9 +27,12 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: "8.0.x"
-      # Ensure this to make sure to actually test against real deal
-      - name: Install .NET dependencies
+      # Generate lock file
+      - name: Generate lock file
         run: dotnet restore --force --use-lock-file
+      # Test restore with locked mode
+      - name: Restore with locked mode
+        run: dotnet restore --locked-mode
       # Dotnet by default restores implicitly if missing something. It is unneccessary and unwanted in CI-situations.
       - name: Build application
         run: dotnet build --no-restore
