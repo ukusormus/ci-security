@@ -1,7 +1,11 @@
 name: Lab01 Hello Disobey
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+defaults:
+  run:
+    shell: pwsh
 jobs: 
   Hello-Job:
     runs-on: ubuntu-latest
     steps:
-    - pwsh: echo "🎉 Step of the job is running on ${{ runner.os }}!"
+    - name: Run hello world
+      run: echo "🎉 Step of the job is running on ${{ runner.os }}!"
