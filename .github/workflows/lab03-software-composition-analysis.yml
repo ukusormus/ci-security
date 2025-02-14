@@ -116,7 +116,7 @@ jobs:
           npm install -g retire
           mkdir reports
       - name: Run RetireJS
-        run: retire --path . --outputformat depcheck --outputpath ./reports/retirevulns.html --severity low --exitwith 1 --deep
+        run: retire --path . --outputformat cyclonedxJSON --outputpath ./reports/output.json --severity low --exitwith 1 --deep
       - name: Upload Test results
         uses: actions/upload-artifact@master
         if: ${{ always() }}
