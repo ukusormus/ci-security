@@ -4,7 +4,7 @@
 
 Try to print text with GitHub actions!
 
-## Links 
+## Links
 
 - Understanding GitHub Actions: <https://docs.github.com/en/actions/about-github-actions/understanding-github-actions>
 - Quickstart how to write GitHub Actions pipelines: <https://docs.github.com/en/actions/writing-workflows/quickstart>
@@ -19,4 +19,4 @@ Try to print text with GitHub actions!
 It is better to try by yourself first, but when you are done with that here is a solution for the task
 
 - Code: <https://github.com/Rinorragi/ci-security/blob/main/.github/workflows/lab01-hello-github-actions.yml>
-- Runs: <https://github.com/Rinorragi/ci-security/actions/runs/12525718761>
+- Runs: <https://github.com/Rinorragi/ci-security/actions/workflows/lab01-hello-github-actions.yml>
