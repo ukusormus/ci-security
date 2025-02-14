@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build docker image
+      - name: Build docker image and run ZAP scan
         run: |
           Write-Host "-- Build docker"
           docker build -t vulnerable-app-image -f ./apps/vulnerable-app/Dockerfile .
@@ -64,7 +64,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build docker image
+      - name: Build docker image and run nuclei scan
         run: |
           Write-Host "-- Build docker"
           docker build -t vulnerable-app-image -f ./apps/vulnerable-app/Dockerfile .
@@ -105,7 +105,7 @@ jobs:
           go-version: "stable" # Latest stable: https://github.com/actions/setup-go
       - name: Install ffuf
         run: go install github.com/ffuf/ffuf/v2@latest
-      - name: Build docker image
+      - name: Build docker image and run ffuf scan
         run: |
           Write-Host "-- Build docker"
           docker build -t vulnerable-app-image -f ./apps/vulnerable-app/Dockerfile .
@@ -116,7 +116,7 @@ jobs:
           Write-Host "-- Fetch IP"
           $targetIp = docker inspect --format '{{ .NetworkSettings.IPAddress }}' $containerId
           Write-Host "TargetIP was $targetIp"
-          $target = "http://"+$targetIp+":8080"
+          $target = "http://"+$targetIp+":8080/FUZZ"
 
           Write-Host "-- Create results folder"
           mkdir ${{github.workspace}}/ffufreports
