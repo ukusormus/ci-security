@@ -114,7 +114,7 @@ jobs:
       - name: Setup RetireJS
         run: npm install -g retire
       - name: Run RetireJS
-        run: retire --path . --outputformat depcheck --outputpath ./reports/retirevulns.html --severity low --exitcode 1 --deep
+        run: retire --path . --outputformat depcheck --outputpath ./reports/retirevulns.html --severity low --exitwith 1 --deep
       - name: Upload Test results
         uses: actions/upload-artifact@master
         if: ${{ always() }}
