@@ -1,0 +1,18 @@
+# Name of the workflow
+name: Lab01 List branch protections
+# How the workflow run is named in GitHub
+run-name: Lab02 - ${{ github.actor }} is listing branch protections with GraphQL 🚀
+on:
+  # Make it possible to other workflows to call this
+  workflow_call:
+  # Make it possible to manually run this workflow
+  workflow_dispatch:
+# The actual jobs
+jobs:
+  # Job named Hello-job that runs on ubuntu-latest virtual machine
+  Hello-Job:
+    runs-on: ubuntu-latest
+    # Steps that are being run to complete the job
+    steps:
+      - name: Run hello world
+        run: ./scripts/branchprotections.sh
