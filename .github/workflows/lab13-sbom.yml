@@ -53,7 +53,7 @@ jobs:
       - name: Build application
         run: dotnet build ci-security.sln --output buildOutput
       - name: Generate SBOM
-        run: sbom-tool gen -o ./reports
+        run: sbom-tool generate -o ./reports
       - name: Upload sbom results
         uses: actions/upload-artifact@master
         if: ${{ always() }}
