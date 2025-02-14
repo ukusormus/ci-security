@@ -13,7 +13,6 @@ on:
   workflow_dispatch:
 # The actual jobs
 jobs:
-  # Job named Build-Job that builds the example applications
   Create-Package-Locks:
     name: "Create Package Lock"
     runs-on: ubuntu-latest
