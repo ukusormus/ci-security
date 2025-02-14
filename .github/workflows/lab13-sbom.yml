@@ -44,6 +44,8 @@ jobs:
           dotnet-version: 8.0.x
       - name: Install Microsoft SBOM tool
         run: dotnet tool install --global Microsoft.Sbom.DotNetTool
+      - name: Create SBOM reports directory
+        run: mkdir sbom-reports
       - name: Generate SBOM
         run: sbom-tool generate -PackageSupplier "Ci-Security Example ltd" -BuildComponentPath ./apps -PackageName ExamplePackage -PackageVersion 1 -BuildDropPath ./sbom-reports
       - name: Upload sbom results
