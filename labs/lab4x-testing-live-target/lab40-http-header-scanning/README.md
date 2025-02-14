@@ -23,11 +23,10 @@ Online:
 Offline:
 
 - OWASP Secure Headers Project validator (using venom): <https://github.com/oshp/oshp-validator>
-  - If you use venom, the [`release/examples` branch `scripts`](https://github.com/Rinorragi/ci-security/blob/release/examples/scripts/oshp_validator_tests_suite.yml) folder has the yml file you'll need for calling the tool.
 
 ## Scan HTTP headers
 
-In this lab, you’ll set up a workflow to scan the HTTP headers of your web application using `MDN HTTP Observatory`. You can ask for a target if you don't have one. This is not something that would be very intrusive. You can also try `OSHP validator` and running the target in docker. Check the [vulnerable-pipeline](/.github/workflows/vulnerable-pipeline.yml) to see how to run the app in docker.
+In this lab, you’ll set up a workflow to scan the HTTP headers of your web application using `MDN HTTP Observatory`. You can ask for a target if you don't have one. This is not something that would be very intrusive. You can also try `OSHP validator` and running the target in docker. Check the [vulnerable-pipeline](/.github/workflows/vulnerable-pipeline.yml) to see how to run the app in docker. With `venom` you will need [this yml file](https://github.com/oshp/oshp-validator/blob/main/tests_suite.yml).
 
 ## Links
 
