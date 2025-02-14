@@ -3,19 +3,19 @@ description: "Builds a .NET application using the specified version of the .NET 
 
 inputs:
   folder-path:
+    description: "The path to the .NET application to build."
     required: true
-    type: string
   run-tests:
+    description: "Should we run tests after building the application?"
     required: false
-    type: boolean
-    default: false
+    default: "false"
   dotnet-version:
+    description: "The version of the .NET SDK to use."
     required: false
-    type: string
     default: "8.0"
   output-directory-path:
+    description: "The directory where the application will be published."
     required: false
-    type: string
     default: "${{ github.workspace }}/output"
 outputs:
   output-directory-path:
