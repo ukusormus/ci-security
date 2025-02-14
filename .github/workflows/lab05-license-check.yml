@@ -78,7 +78,10 @@ jobs:
           dotnet-version: "8.0.x"
       - name: Restore
         run: dotnet restore scancode-inputs/ci-security.sln
-      - uses: nexB/scancode-action@alpha
-        with:
-          pipelines: "scan_codebase,find_vulnerabilities"
-          output-formats: "json xlsx spdx cyclonedx"
+      - name: Install ScanCode
+        run: pip install scancode-toolkit[full]
+      - name: Test ScanCode installation
+        run: scancode -h
+      - name: Run ScanCode
+        run: scancode --copyright --license --package --email --url --info --license-score 10 -n 10
+        working-directory: ./scancode-inputs
