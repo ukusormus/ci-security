@@ -88,5 +88,5 @@ jobs:
         uses: actions/upload-artifact@master
         if: ${{ always() }}
         with:
-          name: RetireJS report
+          name: Scancode report
           path: ${{github.workspace}}/reports
