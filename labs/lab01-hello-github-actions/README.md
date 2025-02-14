@@ -9,6 +9,10 @@ Try to print text with GitHub actions!
 - Understanding GitHub Actions: <https://docs.github.com/en/actions/about-github-actions/understanding-github-actions>
 - Quickstart how to write GitHub Actions pipelines: <https://docs.github.com/en/actions/writing-workflows/quickstart>
 - Workflow syntax: <https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions>
+- Workflow commands: <https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions>
+- Expressions: <https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions>
+- Variables: <https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables>
+- Contexts: <https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs>
 
 ## Example solution
 
