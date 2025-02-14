@@ -19,8 +19,6 @@ jobs:
       security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
       actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
     runs-on: ubuntu-latest
-    env:
-      ACTIONS_RUNNER_DEBUG: true
     # Steps to actually build the application
     steps:
       - name: Use Node.js
