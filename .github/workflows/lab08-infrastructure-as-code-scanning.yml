@@ -39,9 +39,3 @@ jobs:
         if: success() || failure()
         with:
           sarif_file: results.sarif
-      - name: Upload Test results
-        uses: actions/upload-artifact@master
-        if: ${{ always() }}
-        with:
-          name: Upload sarif report
-          path: results.sarif
