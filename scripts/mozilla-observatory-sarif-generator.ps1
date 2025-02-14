@@ -77,7 +77,7 @@ $testResults
 | ForEach-Object {
   # Add to results
   $sarifResult.runs[0].results += [PSCustomObject]@{
-    ruleId    = $_.RuleId
+    ruleId    = ($_.RuleId + "")
     level     = "error"
     kind      = "fail"
     message   = [PSCustomObject]@{
@@ -88,8 +88,8 @@ $testResults
   }
   # Add to tool rules
   $sarifResult.runs[0].tool.driver.rules += [PSCustomObject]@{
-    id               = $_.RuleId
-    name             = $_.Name
+    id               = ($_.RuleId + "")
+    name             = ($_.Name + "")
     shortDescription = [PSCustomObject]@{
       text = $_.Description | Out-String
     }
