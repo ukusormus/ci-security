@@ -88,7 +88,7 @@ $testResults
     level     = "error"
     kind      = "fail"
     message   = [PSCustomObject]@{
-      text = "($_.Name + "")"
+      text = ($_.Name + "")
     }
     locations = @($sarifPhysicalLocationTemplate)
   }
