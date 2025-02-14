@@ -18,7 +18,7 @@ Remember to reset the timer
 
 ![Potato in kitchen](images/kitchen_potato.jpeg) <!-- .element: width="400" -->
 
-- 18 labs
+- 19 labs
 - ~10 minutes for each
 
 ---note---
@@ -34,9 +34,9 @@ Agenda:
 - 0:00: Theory and lab introduction
 - 0:10: Labs: GitHub Actions and dependencies
 - 1:00: Recap
-- 1:05: Labs: development and infrastructure
+- 1:10: Labs: development and infrastructure
 - 2:00: Recap
-- 2:05: Labs: testing live target and next steps
+- 2:10: Labs: testing live target and next steps
 - 2:45: Recap
 - 3:00: The end
 
@@ -140,6 +140,14 @@ If the point is to detect and not prevent, then build failures are soon to be di
 ---note---
 
 False positive, false negative, true positive, true negative etc.
+
+---slide---
+
+## Security considerations
+
+- Examples are using 3rd party actions
+- Examples are using 3rd party tools
+- These are RCE-vector to your IPR (code)
 
 ---slide---
 
