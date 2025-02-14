@@ -93,11 +93,12 @@ $testResults
       text = $_.Description | Out-String
     }
     fullDescription  = [PSCustomObject]@{
-      text = "https://developer.mozilla.org" + $_.Link | Out-String
+      text = $_.Description | Out-String
     }
     help             = [PSCustomObject]@{
       text = $_.Description | Out-String
     }
+    helpUri          = "https://developer.mozilla.org" + $_.Link | Out-String
     properties       = [PSCustomObject]@{
       precision           = "very-high"
       severity            = "error"
