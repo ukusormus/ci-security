@@ -1,5 +1,16 @@
 # Lab02 - Software Composition Analysis (SCA)
 
+| Title          | Description                                                                                                              |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Target         | Learn to find known vulnerabilities from dependencies                                                                    |
+| Difficulty     | Medium                                                                                                                   |
+| Measure        | Amount of vulnerabilities                                                                                                |
+| Threat         | [OWASP TOP 10: Vulnerable and outdated components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/) |
+| Detect         | Known vulnerabilities that attacker could use to attack application                                                      |
+| Prevent        | Deploying vulnerable application                                                                                         |
+| Stage          | Build (prevent new vulnerabilities from dependency changes), Daily (Find information about new vulnerabilities)          |
+| Known problems | Not all ecosystems publish vulnerability information equally and not all vulnerabilities get public CVE numbers          |
+
 Software Composition Analysis (SCA) helps detect known vulnerabilities in the open-source libraries and frameworks used by your application. By scanning direct and transitive dependencies, SCA tools highlight security flaws and outdated packages, so you can take action before issues affect your production environment.
 
 Because these tools often rely on different vulnerability databases or specialize in particular ecosystems, it’s beneficial to run multiple checks. This is often done in the Build stage of your CI/CD pipeline, and run during PR checks, ensuring that every commit is scanned for potential risks.
