@@ -38,4 +38,4 @@ jobs:
           Write-Host "Run dotnetaudit.ps1 with total of $vulnCount vulnerabilities"
           Write-Host "---OUTPUT---"
           Get-content vulnerable.out
-          if ($vulnCount -gt 0) { echo "::error file=scripts/dotnetaudit.ps1,line=15,col=1,endColumn=21,title=Vulnerabilities above zero::Vulnerabilities found for total of $vulnCount" }
+          if ($vulnCount -gt 0) { echo "::error file=scripts/dotnetaudit.ps1,line=19,col=1,endColumn=21,title=Vulnerabilities above zero::Vulnerabilities found for total of $vulnCount" }
