@@ -60,3 +60,4 @@ Apps are pretty boring.
 - [Lab08 - IaC scanning](/labs/lab08-iac-scanning/README.md)
 - [Lab09 - HTTP header scanning](/labs/lab09-http-header-scanning/README.md)
 - [Lab10 - TLS cipher scanning](/labs/lab10-tls-scanning/README.md)
+- [Lab11 - SARIF file generation](/labs/lab11-sarif/README.md)
