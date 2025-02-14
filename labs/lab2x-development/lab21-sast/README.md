@@ -15,10 +15,6 @@ Static Application Security Testing (SAST) inspects your source code (or compile
 
 There are ton of SAST tools and you should choose your weapons based on the technology stack (programming languages) and use cases. Best tools might require licenses and setting up servers or whatnots.
 
-## TODO
-
-Something to find
-
 ## Find vulnerabilities in the code of vulnerable-app with SAST
 
 GitHub Advanced Security and Semgrep Community Edition are something that you could look first.
@@ -33,3 +29,10 @@ GitHub Advanced Security and Semgrep Community Edition are something that you co
 
 - Code: <https://github.com/Rinorragi/ci-security/blob/release/examples/.github/workflows/lab06-static-application-security-testing.yml>
 - Runs: <https://github.com/Rinorragi/ci-security/actions/workflows/lab06-static-application-security-testing.yml>
+
+<details>
+  <summary>Spoiler warning - solution</summary>
+
+There are bunch of things that you can find but the ones you should be looking for are in [vulnerable-app](/apps/vulnerable-app/Controllers/HomeController.cs)
+
+</details>
