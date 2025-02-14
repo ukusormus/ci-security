@@ -1,0 +1,37 @@
+# Name of the workflow
+name: Lab03 SCA
+# How the workflow run is named in GitHub
+run-name: Lab03 - ${{ github.actor }} is finding vulns🚀
+# Set your preferences for the script
+defaults:
+  run:
+    shell: pwsh
+on:
+  # Make it possible to other workflows to call this
+  workflow_call:
+  # Make it possible to manually run this workflow
+  workflow_dispatch:
+# The actual jobs
+jobs:
+  # Job named Build-Job that builds the example applications
+  Test-Vulnerabilities-Natively:
+    runs-on: ubuntu-latest
+    # Steps to actually build the application
+    steps:
+      # Check out the git repository
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Ensure proper version of .NET
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "8.0.x"
+      # Ensure this to make sure to actually test against real deal
+      - name: Install .NET dependencies
+        run: dotnet restore
+      # Sometimes (even when considered as a bad practice) part of the dependencies are fetched during build, so better to build first
+      - name: Build application
+        run: dotnet build
+      - name: Use dotnet tools to test vulns and to fail the job
+        run: $vulnCount = .\scripts\dotnetaudit.ps1
+          if ($vulnCount > 0) { echo "::error vulnerabilities found for total of $vulnCount"; exit 1; }
