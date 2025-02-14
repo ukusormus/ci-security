@@ -81,5 +81,5 @@ jobs:
       - name: Install ScanCode
         run: pip install scancode-toolkit[full]
       - name: Run ScanCode
-        run: scancode --copyright --license --package --email --url --info --license-score 10 -n 10
+        run: scancode --copyright --license --package --email --url --info --license-score 70 -n 10
         working-directory: ./scancode-inputs
