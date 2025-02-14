@@ -88,7 +88,7 @@ $testResults
     level     = "error"
     kind      = "fail"
     message   = [PSCustomObject]@{
-      text = "msg"
+      text = "($_.Name + "")"
     }
     locations = @($sarifPhysicalLocationTemplate)
   }
@@ -114,7 +114,7 @@ $testResults
   }
 }
 
-$null = $sarifResult | ConvertTo-Json -Depth 10 -Compress | Out-File $fileName
+$null = $sarifResult | ConvertTo-Json -Depth 10 | Out-File $fileName
 
 
 
