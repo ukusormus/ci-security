@@ -14,6 +14,8 @@ jobs:
         shell: pwsh
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Run the app
         run: |
           $password = "OH_NOES_EXPOSED_PASSWORD_IS_BAD"
@@ -22,6 +24,7 @@ jobs:
           docker build -t vulnerable-app-image -f ./apps/vulnerable-app/Dockerfile .
 
           Write-host "-- Create HTTPS certificate"
+          mkdir cert
           dotnet dev-certs https -ep ./cert/secret_certificate.pfx -p $password
           dotnet dev-certs https --trust
 
