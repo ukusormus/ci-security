@@ -80,5 +80,7 @@ jobs:
         run: dotnet restore scancode-inputs/ci-security.sln
       - name: Install ScanCode
         run: pip install scancode-toolkit[full]
+      - name: Create folder for reports
+        run: mkdir reports
       - name: Run ScanCode
-        run: scancode --copyright --license --package --email --url --info --license-score 70 -n 10 ./scancode-inputs
+        run: scancode --copyright --license --package --email --url --info --license-score 70 -n 10 ./scancode-inputs --html reports/output.html --json-pp reports/output.json
