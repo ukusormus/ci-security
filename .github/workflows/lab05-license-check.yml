@@ -83,7 +83,7 @@ jobs:
       - name: Create folder for reports
         run: mkdir reports
       - name: Run ScanCode
-        run: scancode --copyright --license --package --email --url --info --license-score 70 -n 10 ./scancode-inputs --html reports/output.html --json-pp reports/output.json
+        run: scancode --license --email --license-score 70 -n 10 ./scancode-inputs --html reports/output.html --json-pp reports/output.json
       - name: Upload Test results
         uses: actions/upload-artifact@master
         if: ${{ always() }}
