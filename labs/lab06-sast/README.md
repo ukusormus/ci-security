@@ -10,3 +10,9 @@ GitHub Advanced Security and Semgrep Community Edition are something that you co
 
 - Semgrep (Community Edition): <https://semgrep.dev/docs/semgrep-ci/sample-ci-configs#sample-github-actions-configuration-file>
 - Semgrep rules: <https://github.com/semgrep/semgrep-rules>
+- GitHub Advanced Security: <https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security>
+
+## Example solution
+
+- Code: <https://github.com/Rinorragi/ci-security/blob/main/.github/workflows/lab06-static-application-security-testing.yml>
+- Runs: <https://github.com/Rinorragi/ci-security/actions/workflows/lab06-static-application-security-testing.yml>
