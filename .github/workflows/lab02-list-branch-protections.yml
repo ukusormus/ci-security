@@ -1,5 +1,5 @@
 # Name of the workflow
-name: Lab01 List branch protections
+name: Lab02 List branch protections
 # How the workflow run is named in GitHub
 run-name: Lab02 - ${{ github.actor }} is listing branch protections with GraphQL 🚀
 on:
