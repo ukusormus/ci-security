@@ -4,10 +4,6 @@
 
 Try to find vulnerabilities in the example apps. There are multiple ways to do it but I would suggest starting from OWASP Dependency Check because it is most versatile. Finding vulnerabilities is in theory straightforward but tricky thing is that different tools might host their own vulnerability database or solely focus on one tech stack.
 
-## Disclaimer
-
-First push to a new branch is not considered as a change. Requiring pull-request will start
-
 ## Links
 
 - How to write warnings and errors in GitHub workflows: <https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-a-warning-message>
