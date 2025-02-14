@@ -23,6 +23,10 @@ jobs:
       ACTIONS_RUNNER_DEBUG: true
     # Steps to actually build the application
     steps:
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
       - name: Install Mozilla Observatory
         run: npm install --global @mdn/mdn-http-observatory
       - name: Checkout
