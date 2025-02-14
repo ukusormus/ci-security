@@ -2,6 +2,7 @@
 name: Lab04 Package Locks
 # How the workflow run is named in GitHub
 run-name: Lab04 - ${{ github.actor }} is locking packages 🔒
+permissions: read-all
 # Set your preferences for the script
 defaults:
   run:

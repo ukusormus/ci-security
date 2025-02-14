@@ -2,6 +2,7 @@
 name: Lab03 SCA
 # How the workflow run is named in GitHub
 run-name: Lab03 - ${{ github.actor }} is finding vulns🚀
+permissions: read-all
 # Set your preferences for the script
 defaults:
   run:

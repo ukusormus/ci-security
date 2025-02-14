@@ -2,6 +2,7 @@
 name: Lab05 License check
 # How the workflow run is named in GitHub
 run-name: Lab05 - ${{ github.actor }} is inspecting used licenses 🔎
+permissions: read-all
 # Set your preferences for the script
 defaults:
   run:
