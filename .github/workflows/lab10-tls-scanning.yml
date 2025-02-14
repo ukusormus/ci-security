@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     # Steps to actually build the application
     steps:
+      # Check out the git repository
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Scan TLS for given domain
         run: |
           $scanResults = ./scripts/tlsaudit.ps1 www.zure.com
