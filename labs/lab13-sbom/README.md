@@ -11,6 +11,14 @@
 | Stage          | Build                                                                                                                                                                                                                                                                                                                                                                     |
 | Known problems | Generating SBOM is the first step. You need to have a place where to upload them andf from where to browse them.                                                                                                                                                                                                                                                          |
 
+Software Bill of Materials (SBOM) is one of the things that might be mandatory if you are working with USA based companies or government. Its purpose is to understand what all is included into supply chain of a solution. This might not be that useful unless there is centralized place to upload them. If there is centralized place you could check from there for example in case of new Log4Shell that which applications are using that component and then contact the system owners about urgent need for patching even if they would not have Software Composition Analysis or similar in place.
+
+There seems to be two formats that are often used: SPDX and CycloneDX. Based on my experience CycloneDX would be preferred choice for me but I have not much to back my claim.
+
+## Generate SBOM
+
+Generate SBOM from the vulnerable-app familiar from earlier exercises in CI pipeline.
+
 ## Links
 
 - [SPDX format](https://spdx.dev/learn/overview/)
