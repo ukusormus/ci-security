@@ -30,12 +30,16 @@ First push to a new branch is not considered as a change. Requiring pull-request
 <details>
   <summary>Spoiler warning - solution</summary>
   
+  ### Protect protected
+
   1. Sign in into GitHub
   1. Select Rules/Rulesets from the Settings
   1. Create a new ruleset `Protect protected` with `include by pattern` with pattern `protected**/**/*`
   1. Set the Enforcement status to Active
   1. Required fields above. 
   1. Test by creating a branch `protected/test` and then trying to modify file in it and pushing again.
+
+  ### Protect releases
 
   1. Select Rules/Rulesets from the Settings
   1. Create a new ruleset `Protect releases` with `include by pattern` with pattern `release/**/*`
