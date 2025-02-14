@@ -8,6 +8,13 @@ param(
   $fileName = "mdn.sarif.json"
 )
 
+function Strip-String {
+  param(
+    [Parameter()]
+    $stringToStip)
+  ($stringToStip + "").Replace("\r", "").Replace("\n", "").Replace("<p>", "").Replace("</p>", "").Trim()
+}
+
 $mozillaResultJson = mdn-http-observatory-scan $domain
 
 # Convert JSON to PS Object
@@ -25,12 +32,12 @@ $mozillaTestResults
   $test = $mozillaTestResults.$_
   [PSCustomObject]@{
     Pass        = $test.pass
-    Name        = $test.title
-    MessageText = $test.recommendation
+    Name        = Strip-String $test.title
+    MessageText = Strip-String $test.recommendation
     Score       = $test.score_modifier
-    RuleId      = $test.result
-    Description = $test.score_description
-    Link        = $test.link
+    RuleId      = Strip-String $test.result
+    Description = Strip-String $test.score_description
+    Link        = Strip-String $test.link
   }
 }
 | Where-Object { $_.Pass -eq $False } # Take only failing results (SARIF does not exactly support pass=true type of results)
@@ -80,9 +87,9 @@ $testResults
     ruleId    = ($_.RuleId + "")
     level     = "error"
     kind      = "fail"
-    message   = @([PSCustomObject]@{
-        text = ($_.MessageText + "")
-      })
+    message   = [PSCustomObject]@{
+      text = ($_.MessageText + "")
+    }
     locations = @($sarifPhysicalLocationTemplate)
   }
   # Add to tool rules
