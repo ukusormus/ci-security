@@ -1,0 +1,63 @@
+# Name of the workflow
+name: Lab13 SBOM
+# How the workflow run is named in GitHub
+run-name: Lab13 - ${{ github.actor }} is running SBOM scans 🚀
+permissions: read-all
+# Set your preferences for the script
+defaults:
+  run:
+    shell: pwsh
+on:
+  # Make it possible to other workflows to call this
+  workflow_call:
+  # Make it possible to manually run this workflow
+  workflow_dispatch:
+jobs:
+  cyclonedx:
+    runs-on: ubuntu-latest
+    # Steps to actually build the application
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 8.0.x
+      - name: Install CycloneDX
+        run: dotnet tool install --global CycloneDX
+      - name: Install .NET dependencies
+        run: dotnet restore
+      - name: Build application
+        run: dotnet build
+      - name: Generate sbom with CycloneDX
+        run: dotnet CycloneDX ci-security.sln --json --exclude-dev -o ./reports
+      - name: Upload sbom results
+        uses: actions/upload-artifact@master
+        if: ${{ always() }}
+        with:
+          name: CycloneDX SBOM
+          path: ${{github.workspace}}/reports
+  spdx:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 8.0.x
+      - name: Install .NET dependencies
+        run: dotnet restore
+      - name: Build application
+        run: dotnet build ci-security.sln --output buildOutput
+      - name: Generate SBOM
+        run: |
+          curl -Lo $RUNNER_TEMP/sbom-tool https://github.com/microsoft/sbom-tool/releases/latest/download/sbom-tool-linux-x64
+          chmod +x $RUNNER_TEMP/sbom-tool
+          $RUNNER_TEMP/sbom-tool gen -o ./reports
+      - name: Upload sbom results
+        uses: actions/upload-artifact@master
+        if: ${{ always() }}
+        with:
+          name: SPDX SBOM
+          path: ${{github.workspace}}/reports
