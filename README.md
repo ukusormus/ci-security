@@ -64,7 +64,7 @@ Apps are pretty boring.
 ## Labs
 
 - [Lab00 - Hello GitHub Actions](/labs/lab0x-hello-github-actions/lab00-hello-github-actions/README.md)
-- [Lab10 - Software Composition Analysis (contains TODO)](/labs/lab1x-dependencies/lab10-sca/README.md)
+- [Lab10 - Software Composition Analysis](/labs/lab1x-dependencies/lab10-sca/README.md)
 - [Lab11 - Package locks](/labs/lab1x-dependencies/lab11-package-locks/README.md)
 - [Lab12 - License check](/labs/lab1x-dependencies/lab12-license-check/README.md)
 - [Lab13 - Software Bill of Materials](/labs/lab1x-dependencies/lab13-sbom/README.md)

@@ -17,10 +17,6 @@ Because these tools often rely on different vulnerability databases or specializ
 
 In this lab, you’ll use various SCA approaches — such as `OWASP Dependency Check`, .NET’s built-in commands, `RetireJS`, and `NPM audit` — to discover which best fits your workflow and provides the most comprehensive coverage.
 
-## TODO
-
-Fix or remove Test-with-dependency-review
-
 ## Find vulnerabilities from dependencies
 
 Try to find vulnerabilities in the example apps. There are multiple ways to do it but I would suggest starting from OWASP Dependency Check because it is most versatile. Finding vulnerabilities is in theory straightforward but tricky thing is that different tools might host their own vulnerability database or solely focus on one tech stack.
@@ -61,5 +57,9 @@ Has multiple ouput options and fits nicely to build pipeline. Although it natura
 ### Dependabot
 
 Dependabot has also noticed need for updates that can be found from: <https://github.com/Rinorragi/ci-security/pulls>
+
+### Dependency review
+
+It seems to check only the changed context. It can't find vulnerabilities that are already existing. So it seems that is not equally good in terms of finding new vulnerabilities in existing codebase.
 
 </details>
