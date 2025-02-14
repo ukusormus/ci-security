@@ -5,7 +5,7 @@ param(
   # Where to generate the report
   [Parameter()]
   [string]
-  $fileName = "mdn-sarif.json"
+  $fileName = "mdn.sarif.json"
 )
 
 $mozillaResultJson = mdn-http-observatory-scan $domain
@@ -40,7 +40,12 @@ $sarifResultJsonTemplate = @"
     {
       "tool": {
         "driver": {
-          "name": "MDN-SARIF-generator"
+          "version": "1.0",
+          "semanticVersion": "1.0.0",
+          "name": "MDN-SARIF",
+          "fullName": "Mozilla Observatory SARIF generator",
+          "informationUri": "https://github.com/Rinorragi/ci-security/blob/main/scripts/mozilla-observatory-sarif-generator.ps1",
+          "rules": []
         }
       },
       "results": []

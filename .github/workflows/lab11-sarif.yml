@@ -26,9 +26,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run Mozilla Observatory and create SARIF results
-        run: ./scripts/mozilla-observatory-sarif-generator.ps1 "huuhka.net" "mdn-results.sarif"
+        run: ./scripts/mozilla-observatory-sarif-generator.ps1 "huuhka.net" "mdn.sarif.json"
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         if: success() || failure()
         with:
-          sarif_file: "mdn-results.sarif"
+          sarif_file: "mdn.sarif.json"
+          category: mdn-sarif

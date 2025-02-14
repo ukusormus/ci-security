@@ -15,6 +15,7 @@ OASIS SARIF is standard for common output format for static analysis tools. Unde
 - OASIS SARIF: <https://www.oasis-open.org/committees/sarif/>
 - GitHub SARIF support: <https://docs.github.com/en/code-security/code-scanning/integrating-with-code-scanning/sarif-support-for-code-scanning>
 - Microsoft SARIF tutorials: <https://github.com/microsoft/sarif-tutorials>
+- SARIF Validator: <https://sarifweb.azurewebsites.net/Validation>
 
 ## Example solution
 
