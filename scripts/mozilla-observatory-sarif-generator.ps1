@@ -80,10 +80,9 @@ $testResults
     ruleId    = ($_.RuleId + "")
     level     = "error"
     kind      = "fail"
-    message   = [PSCustomObject]@{
-      text = $_.MessageText | Out-String
-      id   = $_.RuleId
-    }
+    message   = @([PSCustomObject]@{
+        text = ($_.MessageText + "")
+      })
     locations = @($sarifPhysicalLocationTemplate)
   }
   # Add to tool rules
@@ -91,13 +90,13 @@ $testResults
     id               = ($_.RuleId + "")
     name             = ($_.Name + "")
     shortDescription = [PSCustomObject]@{
-      text = $_.Description | Out-String
+      text = ($_.Description + "")
     }
     fullDescription  = [PSCustomObject]@{
-      text = $_.Description | Out-String
+      text = ($_.Description + "")
     }
     help             = [PSCustomObject]@{
-      text = $_.Description | Out-String
+      text = ($_.Description + "")
     }
     helpUri          = ("https://developer.mozilla.org" + $_.Link)
     properties       = [PSCustomObject]@{
