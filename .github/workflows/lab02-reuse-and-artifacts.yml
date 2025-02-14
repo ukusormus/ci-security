@@ -1,5 +1,5 @@
-name: Lab01 Calling Templates
-run-name: Lab01 - ${{ github.actor }} is calling GitHub Actions Templates 🚀
+name: Lab02 Reuse and Artifacts
+run-name: Lab02 - ${{ github.actor }} is calling Composite Actions 🚀
 permissions: read-all
 on:
   workflow_dispatch:
@@ -15,3 +15,9 @@ jobs:
         uses: ./.github/workflows/build-dotnet-app
         with:
           folder-path: "apps/uptodate-app"
+      # Publish output folder as an artifact
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dotnet-app
+          path: ${{ steps.dotnet-build.outputs.output-directory-path }}

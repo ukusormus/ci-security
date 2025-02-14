@@ -13,14 +13,14 @@ inputs:
     required: false
     type: string
     default: "8.0"
-  output-directory:
+  output-directory-path:
     required: false
     type: string
     default: "${{ github.workspace }}/output"
 outputs:
-  output-directory:
+  output-directory-path:
     description: "The directory where the application was published."
-    value: ${{ inputs.output-directory }}
+    value: ${{ inputs.output-directory-path }}
 
 runs:
   using: composite
@@ -44,5 +44,5 @@ runs:
       working-directory: ${{ inputs.folder-path}}
     - name: Dotnet Publish
       shell: bash
-      run: dotnet publish -o ${{ inputs.output-directory}} --no-build --configuration Release
+      run: dotnet publish -o ${{ inputs.output-directory-path}} --no-build --configuration Release
       working-directory: ${{ inputs.folder-path}}
