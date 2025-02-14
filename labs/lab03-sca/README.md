@@ -6,6 +6,8 @@ Try to find vulnerabilities in the example apps. There are multiple ways to do i
 
 ## Links
 
+- Dependendency review: <https://github.com/actions/dependency-review-action>
+- Dependabot: <https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide>
 - How to write warnings and errors in GitHub workflows: <https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-a-warning-message>
 - Toolkit functions for easier failure: <https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#using-workflow-commands-to-access-toolkit-functions>
 - GitHub Action for OWASP Dependency Check: <https://github.com/dependency-check/Dependency-Check_Action>
@@ -34,5 +36,9 @@ Requires a bit of ducktape around to make it suitable for build pipelines. Altho
 ### RetireJS
 
 Has multiple ouput options and fits nicely to build pipeline. Although it naturally misses the NuGet vulnerabilities and only reports the JS ones.
+
+### Dependabot
+
+Dependabot has also noticed need for updates that can be found from: <https://github.com/Rinorragi/ci-security/pulls>
 
 </details>
