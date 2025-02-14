@@ -1,5 +1,16 @@
 # Lab01 - Hello GitHub Actions
 
+| Title          | Description                           |
+| -------------- | ------------------------------------- |
+| Target         | Learn basics of GitHub Actions syntax |
+| Difficulty     | Easy                                  |
+| Measure        | Build succeeds                        |
+| Threat         | N/A                                   |
+| Detect         | N/A                                   |
+| Prevent        | N/A                                   |
+| Stage          | N/A                                   |
+| Known problems | N/A                                   |
+
 GitHub Actions is a powerful CI/CD platform that lets you automate tasks directly from your GitHub repository.
 
 ## Build Pipeline Overview
