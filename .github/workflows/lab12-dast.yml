@@ -25,8 +25,8 @@ jobs:
           docker build -t vulnerable-app-image -f /apps/vulnerable-app/Dockerfile .
           $containerId = docker run -t -d vulnerable-app-image -p 8080:8080
           $targetIp = docker inspect --format '{{ .NetworkSettings.IPAddress }}' $containerId
-          echo "{ZAP_TARGET_IP}={$targetIp}" >> "$GITHUB_OUTPUT"
-          echo "{ZAP_TARGET_CONTAINERID}={$containerId}" >> "$GITHUB_OUTPUT"
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "ZAP_TARGET_IP=$targetIp"
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "ZAP_TARGET_CONTAINER_ID=$containerId"
       - name: ZAP Scan
         uses: zaproxy/action-full-scan@v0.12.0
         env:
