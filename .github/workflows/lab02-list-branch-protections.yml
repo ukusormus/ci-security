@@ -20,3 +20,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Check branch protections
         run: ./scripts/branchprotections.ps1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
