@@ -33,7 +33,8 @@ jobs:
       - name: Build application
         run: dotnet build
       - name: Use dotnet tools to test vulns and to fail the job
-        run: $vulnCount = .\scripts\dotnetaudit.ps1
+        run: |
+          $vulnCount = .\scripts\dotnetaudit.ps1
           Write-Host "Run dotnetaudit.ps1 with total of $vulnCount"
           Write-Host "---OUTPUT---"
           Get-content vulnerable.out
