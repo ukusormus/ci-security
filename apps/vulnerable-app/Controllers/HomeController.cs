@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Net;
+using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.AspNetCore.Mvc;
 using vulnerable_app.Models;
 
@@ -30,11 +31,13 @@ public class HomeController : Controller
     return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
   }
 
+  // Seems like semgrep / GHAS won't find this
   public IActionResult OpenRedirectVulnerability([FromQuery] string url)
   {
     return Redirect(url);
   }
 
+  // Seems like semgrep / GHAS won't find this
   public ContentResult XSSVulnerability([FromQuery] string content)
   {
     return new ContentResult
@@ -43,5 +46,15 @@ public class HomeController : Controller
       ContentType = "text/html",
       Content = $"<html><body>{content}</body></html>"
     };
+  }
+
+  public IActionResult UnsafeDeserialization([FromQuery] byte[] bytes)
+  {
+    // Yes yes, I want to have an RCE for educational purposes
+#pragma warning disable SYSLIB0011 // Type or member is obsolete
+    BinaryFormatter formatter = new BinaryFormatter();
+    formatter.Deserialize(new MemoryStream(bytes));
+#pragma warning restore SYSLIB0011 // Type or member is obsolete
+    return RedirectToAction("Index");
   }
 }
