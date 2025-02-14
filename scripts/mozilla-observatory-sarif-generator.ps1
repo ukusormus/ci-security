@@ -88,15 +88,15 @@ $testResults
   # Add to tool rules
   $sarifResult.runs[0].tool.driver.rules += [PSCustomObject]@{
     id               = $_.RuleId | Out-String
-    name             = $_.Name
+    name             = $_.Name | Out-String
     shortDescription = [PSCustomObject]@{
-      text = $_.Description
+      text = $_.Description | Out-String
     }
     fullDescription  = [PSCustomObject]@{
-      text = "https://developer.mozilla.org" + $_.Link
+      text = "https://developer.mozilla.org" + $_.Link | Out-String
     }
     help             = [PSCustomObject]@{
-      text = $_.Description
+      text = $_.Description | Out-String
     }
     properties       = [PSCustomObject]@{
       precision           = "very-high"
