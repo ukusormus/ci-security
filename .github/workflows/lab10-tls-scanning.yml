@@ -29,7 +29,9 @@ jobs:
           $ciphers = $scanResults[1]
 
           Write-Host "---- CIPHERS ----"
-          Write-Host $ciphers
+          For ($i = 1; $i -le $scanResults.Length; $i++) {
+            Write-Host $scanResults.[i]
+          }
           Write-Host "----- GRADE -----"
           Write-Host $grade
           if ($grade -ne "A") {
