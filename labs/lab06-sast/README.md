@@ -1,5 +1,7 @@
 # Lab06 - Static Application Security Testing (SAST)
 
+Static Application Security Testing (SAST) inspects your source code (or compiled artifacts) for potential security flaws before the application is ever run. By scanning for dangerous patterns, insecure functions, or known vulnerabilities, SAST tools like GitHub Advanced Security and Semgrep can catch issues early in development. In this lab, you’ll set up a SAST workflow for the `vulnerable-app`, ensuring that security checks happen automatically on each commit.
+
 There are ton of SAST tools and you should choose your weapons based on the technology stack (programming languages) and use cases. Best tools might require licenses and setting up servers or whatnots.
 
 ## Find vulnerabilities in the code of vulnerable-app with SAST

@@ -1,5 +1,9 @@
 # Lab02 - Branch Protections
 
+Branch protections enforce rules that help maintain a stable, high-quality codebase. By restricting merges, preventing force pushes, and requiring pull-request reviews, you ensure that critical branches remain safe from accidental or malicious changes. In this lab, you’ll create GitHub branch protection rules for both `protected` branches and `release` branches, providing an extra layer of security and control over how updates are made.
+
+You’ll configure settings such as requiring an approved pull request, blocking force pushes, and restricting deletions or updates. Testing these rules will help confirm your configurations and illustrate how to keep vital branches safe in a collaborative environment.
+
 ## Protect a branch
 
 Normally you most likely would protect your `main` or `master` branch. To make the the rest of the exercises more fluent we try to protect all the branches that start with `protected`.

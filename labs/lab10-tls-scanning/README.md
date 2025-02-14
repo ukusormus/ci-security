@@ -1,5 +1,9 @@
 # Lab10 - TLS Cipher scanning
 
+Transport Layer Security (TLS) ensures data confidentiality and integrity over the network. However, older or misconfigured versions and ciphers can expose security weaknesses. Tools like `Nmap`, `Qualys`, or `OpenSSL` can help reveal whether outdated protocols (e.g., TLS 1.0) or insecure ciphers (e.g., RC4) remain in your environment, allowing you to take corrective action before attackers exploit those vulnerabilities.
+
+In this lab, you’ll scan a domain’s TLS configuration to identify which ciphers and TLS versions are in use.
+
 ## Scan TLS version
 
 Scan TLS version of the domain.
