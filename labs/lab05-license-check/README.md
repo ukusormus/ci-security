@@ -7,6 +7,7 @@ Check the licenses used in project and fail if there is something else than MIT 
 ## Links
 
 - Scancode: <https://aboutcode.org/scancode/>
+- Scancode GitHub Action: <https://github.com/aboutcode-org/scancode-action>
 - Dotnet delice: <https://github.com/aaronpowell/dotnet-delice>
 - Abandoned license project: <https://github.com/tomchavakis/nuget-license>
 - Rewrite of abandoned license project: <https://github.com/sensslen/nuget-license>
