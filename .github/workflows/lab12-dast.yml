@@ -21,10 +21,14 @@ jobs:
         uses: actions/checkout@v4
       - name: Build docker image
         id: docker-build
-        run: Write-Host "Build docker"
+        run: |
+          Write-Host "-- Build docker"
           docker build -t vulnerable-app-image -f /apps/vulnerable-app/Dockerfile .
+          Write-Host "-- Run docker"
           $containerId = docker run --tty --detach vulnerable-app-image --publish 8080:8080
+          Write-Host "-- Fetch IP"
           $targetIp = docker inspect --format '{{ .NetworkSettings.IPAddress }}' $containerId
+          Write-Host "-- Store variables to output"
           Add-Content -Path $env:GITHUB_OUTPUT -Value "ZAP_TARGET_IP=$targetIp"
           Add-Content -Path $env:GITHUB_OUTPUT -Value "ZAP_TARGET_CONTAINER_ID=$containerId"
       - name: ZAP Scan
