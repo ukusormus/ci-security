@@ -9,7 +9,7 @@ param(
 )
 
 $domain = "huuhka.net"
-$mozillaResultJson = mdn-http-observatory-scan $domain
+$mozillaResultJson = #mdn-http-observatory-scan $domain
 
 # Convert JSON to PS Object
 $mozillaTestResults =
@@ -78,7 +78,7 @@ $testResults
 | ForEach-Object {
   # Add to results
   $sarifResult.runs[0].results += [PSCustomObject]@{
-    ruleId    = $_.RuleId | Out-String
+    ruleId    = $_.RuleId
     level     = "error"
     kind      = "fail"
     message   = [PSCustomObject]@{
@@ -89,8 +89,8 @@ $testResults
   }
   # Add to tool rules
   $sarifResult.runs[0].tool.driver.rules += [PSCustomObject]@{
-    id               = $_.RuleId | Out-String
-    name             = $_.Name | Out-String
+    id               = $_.RuleId
+    name             = $_.Name
     shortDescription = [PSCustomObject]@{
       text = $_.Description | Out-String
     }
@@ -100,7 +100,7 @@ $testResults
     help             = [PSCustomObject]@{
       text = $_.Description | Out-String
     }
-    helpUri          = ("https://developer.mozilla.org" + $_.Link) | Out-String
+    helpUri          = ("https://developer.mozilla.org" + $_.Link)
     properties       = [PSCustomObject]@{
       precision           = "very-high"
       severity            = "error"
