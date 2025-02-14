@@ -1,5 +1,7 @@
 # Lab05 - License check
 
+Managing open-source licenses is a critical part of software governance and compliance. In this lab, you’ll detect all licenses used by your project and fail the build if anything other than MIT is discovered — while also learning to make exceptions where necessary. Tools like `Scancode`, Dotnet `Delice`, and `NPM license checker` can help automate license scanning across different ecosystems, ensuring you maintain visibility and control over your dependencies’ legal requirements.
+
 ## Find used licenses and fail on unknowns
 
 Check the licenses used in project and fail if there is something else than MIT and then learn to make exceptions.

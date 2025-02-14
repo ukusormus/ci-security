@@ -1,5 +1,9 @@
 # Lab01 - Hello GitHub Actions
 
+GitHub Actions is a powerful CI/CD platform that lets you automate tasks directly from your GitHub repository.
+
+In this lab, you’ll set up a simple workflow to print text as a “Hello World” introduction. This first step will help you understand how GitHub Actions works, laying the groundwork for more complex automations later in the workshop.
+
 ## Run a simple GitHub action
 
 Try to print text with GitHub actions!
