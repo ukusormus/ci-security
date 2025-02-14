@@ -2,7 +2,7 @@ name: Lab40 HTTP header scanning
 run-name: Lab40 - ${{ github.actor }} is scanning HTTP headers 🚀
 permissions: read-all
 on:
-  workflow_call:
+  workflow_dispatch:
 jobs:
   example-job:
     runs-on: ubuntu-latest

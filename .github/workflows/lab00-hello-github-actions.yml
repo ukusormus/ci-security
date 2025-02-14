@@ -2,7 +2,7 @@ name: Lab00 Hello GitHub Actions
 run-name: Lab00 - ${{ github.actor }} is testing out GitHub Actions 🚀
 permissions: read-all
 on:
-  workflow_call:
+  workflow_dispatch:
 jobs:
   example-job:
     runs-on: ubuntu-latest
