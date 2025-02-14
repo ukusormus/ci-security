@@ -23,3 +23,4 @@ Apps are pretty boring.
 - [Lab07 - Secret Scanning](/labs/lab07-secret-scanning/README.md)
 - [Lab08 - IaC Scanning](/labs/lab08-iac-scanning/README.md)
 - [Lab09 - HTTP Header Scanning](/labs/lab09-http-header-scanning/README.md)
+- [Lab10 - TLS cipher scannign](/labs/lab10-tls-scanning/README.md)
