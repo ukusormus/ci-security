@@ -3,7 +3,7 @@ run-name: Vulnerable pipeline for checkov
 on:
   workflow_call:
 jobs:
-  Hello-Job:
+  Vulnerable-Job:
     runs-on: ubuntu-latest
     steps:
       - name: Run hello world
