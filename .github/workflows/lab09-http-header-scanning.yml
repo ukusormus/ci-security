@@ -20,4 +20,4 @@ jobs:
       - name: Install Mozilla Observatory
         run: npm install --global @mdn/mdn-http-observatory
       - name: Run Mozilla Observatory
-        run: mdn-http-observatory-scan mdn.dev
+        run: mdn-http-observatory-scan huuhka.net

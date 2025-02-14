@@ -19,8 +19,10 @@ jobs:
     steps:
       - name: Install Mozilla Observatory
         run: npm install --global @mdn/mdn-http-observatory
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Run Mozilla Observatory and create SARIF results
-        run: ./scripts/mozilla-observatory-sarif-generator.ps1 "https://zure.com" "mdn-results.sarif"
+        run: ./scripts/mozilla-observatory-sarif-generator.ps1 "huuhka.net" "mdn-results.sarif"
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         if: success() || failure()
