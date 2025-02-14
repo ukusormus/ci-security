@@ -3,29 +3,27 @@ $query = @"
 {
   repository(owner:"Rinorragi", name:"ci-security") {
     branchProtectionRules(first:100) {
-      edges {
-        node {
-          pattern,
-          allowsDeletions,
-          allowsForcePushes,
-          blocksCreations,
-          dismissesStaleReviews,
-          lockBranch,
-          requireLastPushApproval,
-          requiredApprovingReviewCount,
-          requiredDeploymentEnvironments,
-          requiredStatusCheckContexts,
-          requiresApprovingReviews,
-          requiresCodeOwnerReviews,
-          requiresCommitSignatures,
-          requiresConversationResolution,
-          requiresDeployments,
-          requiresLinearHistory,
-          requiresStatusChecks,
-          requiresStrictStatusChecks,
-          restrictsPushes,
-          databaseId
-        }
+      nodes {
+        pattern,
+        allowsDeletions,
+        allowsForcePushes,
+        blocksCreations,
+        dismissesStaleReviews,
+        lockBranch,
+        requireLastPushApproval,
+        requiredApprovingReviewCount,
+        requiredDeploymentEnvironments,
+        requiredStatusCheckContexts,
+        requiresApprovingReviews,
+        requiresCodeOwnerReviews,
+        requiresCommitSignatures,
+        requiresConversationResolution,
+        requiresDeployments,
+        requiresLinearHistory,
+        requiresStatusChecks,
+        requiresStrictStatusChecks,
+        restrictsPushes,
+        databaseId
       }
     }
   }
