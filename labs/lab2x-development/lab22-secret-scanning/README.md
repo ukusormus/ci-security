@@ -15,6 +15,10 @@ Secret scanning detects credentials and other sensitive information that may be 
 
 In this lab, you’ll configure secret scanning tools to identify and protect against accidental exposure of secrets in the codebase.
 
+## TODO
+
+Try to add something to find.
+
 ## Find secrets from the solution with secret scanning tools
 
 `GitHub Advanced Security` already scans secrets from public repositories. But it has its limitations.
