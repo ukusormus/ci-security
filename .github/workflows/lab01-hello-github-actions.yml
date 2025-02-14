@@ -2,6 +2,7 @@
 name: Lab01 Hello Disobey
 # How the workflow run is named in GitHub
 run-name: Lab01 - ${{ github.actor }} is testing out GitHub Actions 🚀
+permissions: read-all
 # Set your preferences for the script
 defaults:
   run:
