@@ -12,11 +12,26 @@ on:
   # Make it possible to manually run this workflow
   workflow_dispatch:
 # The actual jobs
-jobs: 
+jobs:
   # Job named Hello-job that runs on ubuntu-latest virtual machine
   Hello-Job:
     runs-on: ubuntu-latest
     # Steps that are being run to complete the job
     steps:
-    - name: Run hello world
-      run: echo "🎉 Step of the job is running on ${{ runner.os }}!"
+      - name: Run hello world
+        run: echo "🎉 Step of the job is running on ${{ runner.os }}!"
+  # Job named Build-Job that builds the example applications
+  Build-Job:
+    runs-on: ubuntu-latest
+    # Steps to actually build the application
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "8.0.x"
+      - name: Install .NET dependencies
+        run: dotnet restore
+      - name: Build application
+        run: dotnet build
