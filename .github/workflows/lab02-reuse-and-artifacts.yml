@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Example of composite action - build DOTNET app
     steps:
+      # Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v4
       - uses: ./.github/actions/build-dotnet-app
         with:
           folder-path: 'apps/uptodate-app'
