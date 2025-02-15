@@ -4,8 +4,12 @@ permissions: read-all
 on:
   workflow_dispatch:
 jobs:
-  example-job:
+  composite-action-job:
     runs-on: ubuntu-latest
+    name: Example of composite action - build DOTNET app
     steps:
-      - name: Run hello world
-        run: echo "🎉 Step of the job is running on ${{ runner.os }}!"
+      - uses: .github/actions/build-dotnet-app
+        with:
+          folder-path: 'apps/uptodate-app'
+#  reusable-workflow-job:
+
