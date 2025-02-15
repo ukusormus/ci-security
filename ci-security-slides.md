@@ -84,7 +84,7 @@ You can continue anytime by your own time. Although we might change things.
 
 ---page---
 
-## Continuous integration feedback loop
+## CI feedback loop
 
 ![Running potato](images/runner_potato.png) <!-- .element: width="400" -->
 
