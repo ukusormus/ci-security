@@ -11,8 +11,15 @@ jobs:
       # Checkout the repository to the GitHub Actions runner
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: ./.github/actions/build-dotnet-app
+      - id: dotnet-build
+        uses: ./.github/actions/build-dotnet-app
         with:
           folder-path: 'apps/uptodate-app'
+      - name: Publish created artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dotnet-app
+          path: ${{ steps.dotnet-build.outputs.output-directory-path }}
+
 #  reusable-workflow-job:
 
