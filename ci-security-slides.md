@@ -84,6 +84,53 @@ You can continue anytime by your own time. Although we might change things.
 
 ---page---
 
+## Continuous integration feedback loop
+
+![Running potato](images/runner_potato.jpeg) <!-- .element: width="400" -->
+
+- Focus on fast feedback loop
+
+---note---
+
+OODA
+
+---slide---
+
+## Detect threats
+
+```md [1|2|3|4]
+🟢 Detect succesful (good)
+🟢 Tool not run (bad)
+🔴 Tool failed (bad)
+🔴 Detected and failed (bad)
+```
+
+- Start from this
+- Stick with this with slow tests
+
+---note---
+
+If the point is to detect and not prevent, then build failures are soon to be dismissed if they by default always fail.
+
+---slide---
+
+## Prevent threats
+
+```md [1|2|3|4]
+🟢 No threats (good)
+🔴 Prevention successful (good)
+🔴 Tool failed (bad)
+🟢 Tool not run (bad)
+```
+
+- Requires high security maturity
+
+---note---
+
+False positive, false negative, true positive, true negative etc.
+
+---page---
+
 ## GitHub Actions
 
 - GitHub Actions are based on YAML.
@@ -110,36 +157,6 @@ jobs:
       - name: Example # name of step
         run: echo "🎉!" # Actually doing the thing
 ```
-
----slide---
-
-## Detect threats
-
-```md [1|2|3|4]
-🟢 Detect succesful (good)
-🟢 Tool not run (bad)
-🔴 Tool failed (bad)
-🔴 Detected and failed (bad)
-```
-
----note---
-
-If the point is to detect and not prevent, then build failures are soon to be dismissed if they by default always fail.
-
----slide---
-
-## Prevent threats
-
-```md [1|2|3|4]
-🟢 No threats (good)
-🔴 Prevention successful (good)
-🔴 Tool failed (bad)
-🟢 Tool not run (bad)
-```
-
----note---
-
-False positive, false negative, true positive, true negative etc.
 
 ---slide---
 
