@@ -348,7 +348,7 @@ Recap: 2:45
 
 ## Final words
 
-![Key points potato](images/teaching_potato.jpeg) <!-- .element: width="400" -->
+![Key points potato](images/teaching_potato.png) <!-- .element: width="400" -->
 
 - Use regulatory compliance as selling point
 - The faster the better
@@ -361,4 +361,4 @@ Start small
 
 ## Good luck
 
-![Creepy potato](images/creepy_potato.jpeg) <!-- .element: width="400" -->
+![Creepy potato](images/creepy_potato.png) <!-- .element: width="400" -->
