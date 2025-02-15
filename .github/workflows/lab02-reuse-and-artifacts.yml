@@ -20,6 +20,7 @@ jobs:
         with:
           name: dotnet-app
           path: ${{ steps.dotnet-build.outputs.output-directory-path }}
-
-#  reusable-workflow-job:
-
+  reusable-workflow-job:
+    uses: ./.github/workflows/greeter.yml
+    with:
+      person-name: "${{ github.actor }}"
