@@ -136,7 +136,12 @@ False positive, false negative, true positive, true negative etc.
 - GitHub Actions are based on YAML.
 - `.yml`-files needs to be in `.github/workflows` in `main` branch
 - You can run different version of a workflow from other branch
-- 2000 minutes free time per month
+- Lab00-Lab02: Teaches the syntax GitHub Actions syntax
+
+---slide---
+
+## GitHub-hosted runners
+
 - Run on "somebody elses VMs"
 - Running on Windows / Mac images consumes more time
 - Lab00-Lab02: Teaches the syntax GitHub Actions syntax
@@ -338,3 +343,22 @@ Recap: 2:45
 - Lab51: Show an example how in given branch commit is blocked with commit msg being wrong
 - Lab52: Show something
 - Lab53: Show how act works in your machine
+
+---page---
+
+## Final words
+
+![Key points potato](images/teaching_potato.jpeg) <!-- .element: width="400" -->
+
+- Use regulatory compliance as selling point
+- The faster the better
+
+---note---
+
+Start small
+
+---slide---
+
+## Good luck
+
+![Creepy potato](images/creepy_potato.jpeg) <!-- .element: width="400" -->
