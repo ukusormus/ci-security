@@ -86,7 +86,7 @@ You can continue anytime by your own time. Although we might change things.
 
 ## Continuous integration feedback loop
 
-![Running potato](images/runner_potato.jpeg) <!-- .element: width="400" -->
+![Running potato](images/runner_potato.png) <!-- .element: width="400" -->
 
 - Focus on fast feedback loop
 
