@@ -35,6 +35,7 @@ Before diving in, make sure you have the following:
 1. **Fork the Repository**
 
    - Click `Fork` at the top-right corner of this GitHub repo to create your own copy under your personal GitHub account.
+     - **NOTE**: If you want to run the example workflows from your repo, you need to deselect the `Copy the main branch only` option when forking.
 
 2. **Clone Your Fork**
 
@@ -46,6 +47,7 @@ Before diving in, make sure you have the following:
 
 4. **Check the Solutions**
    - If you get stuck, refer to the lab-specific README files or the workflows in `.github/workflows` for a hint or a complete solution.
+   - If you've cloned all branches during forking, you can also run the example workflows from the `release/examples` branch.
 
 ## Working with the repository
 
